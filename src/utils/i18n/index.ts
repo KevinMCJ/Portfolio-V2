@@ -1,17 +1,11 @@
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
+import enLang from './locales/en.json';
+import esLang from './locales/es.json';
 
 const resources = {
-  en: {
-    translation: {
-      welcomeMessage: 'Welcome to React and react-i18next',
-    },
-  },
-  es: {
-    translation: {
-      welcomeMessage: 'Bienvenido a React y react-i18next',
-    },
-  },
+  en: { translation: enLang },
+  es: { translation: esLang },
 };
 
 // * Configuration

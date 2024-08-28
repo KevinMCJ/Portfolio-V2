@@ -1,0 +1,8 @@
+{
+  "welcomeMessage": "Bienvenido a React y react-i18next",
+  "nav_home": "Inicio",
+  "nav_about": "Sobre mi",
+  "nav_skills": "Habilidades",
+  "nav_projects": "Proyectos",
+  "nav_contact": "Contacto"
+}

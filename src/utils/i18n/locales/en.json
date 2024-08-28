@@ -1,0 +1,8 @@
+{
+  "welcomeMessage": "Welcome to React and react-i18next",
+  "nav_home": "Home",
+  "nav_about": "About Me",
+  "nav_skills": "Skills",
+  "nav_projects": "Projects",
+  "nav_contact": "Contact"
+}
