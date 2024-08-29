@@ -4,16 +4,86 @@
 
 @layer base {
   :root {
-    @apply font-sans bg-gray-100;
-    line-height: 1.5;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    --color-primary-50: 255 255 254;
+    --color-primary-100: 255 254 254;
+    --color-primary-200: 255 253 252;
+    --color-primary-300: 255 252 250;
+    --color-primary-400: 255 250 247;
+    --color-primary-500: 255 248 243;
+    --color-primary-600: 230 223 219;
+    --color-primary-700: 153 149 146;
+    --color-primary-800: 115 112 109;
+    --color-primary-900: 77 74 73;
+    --color-secondary-50: 253 250 247;
+    --color-secondary-100: 252 246 239;
+    --color-secondary-200: 247 232 215;
+    --color-secondary-300: 241 217 191;
+    --color-secondary-400: 231 189 142;
+    --color-secondary-500: 221 161 94;
+    --color-secondary-600: 199 145 85;
+    --color-secondary-700: 133 97 56;
+    --color-secondary-800: 99 72 42;
+    --color-secondary-900: 66 48 28;
+    --color-text: var(--color-secondary-900);
+    --color-active: var(--color-secondary-200);
+    --color-icon: 221 161 94;
+    --color-gradient-start: 255 248 243;
+    --color-gradient-end: 255 252 250;
+  }
+
+  :root.dark {
+    --color-primary-50: 243 244 245;
+    --color-primary-100: 232 233 236;
+    --color-primary-200: 196 200 207;
+    --color-primary-300: 161 166 177;
+    --color-primary-400: 91 100 119;
+    --color-primary-500: 20 33 61;
+    --color-primary-600: 18 30 55;
+    --color-primary-700: 12 20 37;
+    --color-primary-800: 9 15 27;
+    --color-primary-900: 6 10 18;
+    --color-secondary-50: 243 252 249;
+    --color-secondary-100: 231 248 242;
+    --color-secondary-200: 195 238 224;
+    --color-secondary-300: 159 227 205;
+    --color-secondary-400: 88 206 167;
+    --color-secondary-500: 16 185 129;
+    --color-secondary-600: 14 167 116;
+    --color-secondary-700: 10 111 77;
+    --color-secondary-800: 7 83 58;
+    --color-secondary-900: 5 56 39;
+    --color-text: var(--color-primary-50);
+    --color-active: var(--color-primary-700);
+    --color-icon: 16 185 129;
+    --color-gradient-start: 20 33 61;
+    --color-gradient-end: 20 33 61;
   }
 
   body {
-    @apply antialiased text-white;
+    @apply bg-primary-500 text-text;
+    transition: color 0.3s, background-color 0.3s;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--color-gradient-start)),
+      rgb(var(--color-gradient-end))
+    );
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at top right,
+      rgb(var(--color-gradient-start) / 0.1),
+      transparent 70%
+    );
+    z-index: -1;
+    pointer-events: none;
   }
 
   a {
