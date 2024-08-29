@@ -29,13 +29,13 @@ function App() {
 
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-blue-900">
+    <div className="min-h-screen">
       <Navbar />
       <main className="!h-full vstack center">
-        <h1 className="text-4xl font-bold text-primary text-center">
+        <h1 className="text-4xl font-bold text-center">
           {t('welcomeMessage')}
         </h1>
         <button
@@ -47,7 +47,7 @@ function App() {
         </button>
         <button
           onClick={toggleTheme}
-          className="fixed center bottom-4 right-4 size-14 rounded-full bg-primary text-white hover:bg-secondary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:bg-secondary dark:hover:bg-primary"
+          className="fixed center bottom-4 right-4 size-14 rounded-full bg-secondary-600 text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
           aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         >
           {isDark ? (
