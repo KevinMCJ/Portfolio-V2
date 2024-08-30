@@ -59,6 +59,10 @@
     --color-gradient-end: 20 33 61;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-primary-500 text-text;
     transition: color 0.3s, background-color 0.3s;
