@@ -31,21 +31,22 @@ const items = [
 // ! TODO: ADD ANIMATIONS
 const Navbar = () => {
   const { t } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth > 1023);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // * Turn the menu visible if the user resize the window and it was hidden
+  // * UI: Open or close the menu dynamically if there is a change in the window size
   useEffect(() => {
-    const handleResize = () => {
-      setIsMenuOpen(window.innerWidth > 1024);
+    const desktopMediaQuery = window.matchMedia("(min-width: 1023px)");
+
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setIsMenuOpen(event.matches);
     };
 
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    desktopMediaQuery.addEventListener("change", handleMediaQueryChange);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      desktopMediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
