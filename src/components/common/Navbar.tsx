@@ -1,34 +1,37 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { IoMenu, IoClose } from 'react-icons/io5';
-import { FaHome, FaInfoCircle, FaLightbulb, FaLaptopCode, FaEnvelope } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { IoMenu, IoClose } from "react-icons/io5";
+import { FaHome, FaInfoCircle, FaLightbulb, FaLaptopCode, FaEnvelope } from "react-icons/fa";
 
-// ! TODO: ADD HREF TO ITEMS
 const items = [
   {
     icon: <FaHome className="text-icon" />,
-    i18n_key: 'nav_home',
+    i18n_key: "nav_home",
+    href: "#",
   },
   {
     icon: <FaInfoCircle className="text-icon" />,
-    i18n_key: 'nav_about',
+    i18n_key: "nav_about",
+    href: "#about",
   },
   {
     icon: <FaLightbulb className="text-icon" />,
-    i18n_key: 'nav_skills',
+    i18n_key: "nav_skills",
+    href: "#skills",
   },
   {
     icon: <FaLaptopCode className="text-icon" />,
-    i18n_key: 'nav_projects',
+    i18n_key: "nav_projects",
+    href: "#projects",
   },
   {
     icon: <FaEnvelope className="text-icon" />,
-    i18n_key: 'nav_contact',
+    i18n_key: "nav_contact",
+    href: "#contact",
   },
 ];
 
-// ! TODO: ADD ANIMATIONS
 const Navbar = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth > 1023);
@@ -51,30 +54,28 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full h-fit flex bg-secondary-300 dark:bg-primary-600 shadow-primary-500 shadow-md lg:static">
-      <div
-        className={`relative w-full mx-auto max-w-screen-2xl flex items-center justify-between 
-        ${isMenuOpen && 'flex-col'} lg:flex-row`}
-      >
-        <div className="px-5 h-24 w-full flex items-center justify-between gap-4">
+    <nav className="relative flex h-fit w-full bg-secondary-300 px-5 shadow-md shadow-primary-500 dark:bg-primary-600 lg:static lg:pr-3">
+      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-1 lg:flex-row">
+        <div className="flex h-24 items-center justify-between gap-4">
           <h1 className="inline-flex gap-1 text-xl font-bold">
             Kevin <span className="text-secondary-600">Mamani</span>
           </h1>
-          <button className="lg:hidden" onClick={toggleMenu}>
-            {isMenuOpen ? (
-              <IoClose className="size-8" />
-            ) : (
-              <IoMenu className="size-8" />
-            )}
-          </button>
         </div>
+
+        <button className="lg:hidden" onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <IoClose className="size-8" />
+          ) : (
+            <IoMenu className="size-8" />
+          )}
+        </button>
 
         {isMenuOpen && (
           <motion.ul
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className={`absolute top-[100%] bg-opacity-75 backdrop-blur-md bg-inherit w-full vstack whitespace-nowrap text-xl flex lg:static lg:mt-0 lg:flex lg:flex-row lg:justify-center lg:pr-5`}
+            className={`vstack absolute left-0 right-0 top-[100%] flex whitespace-nowrap bg-inherit bg-opacity-75 text-xl backdrop-blur-md lg:static lg:mt-0 lg:flex lg:flex-row lg:justify-center`}
           >
             {items.map((item, key) => (
               <motion.li
@@ -82,12 +83,21 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: key * 0.1 }}
-                className="p-5 lg:py-2 lg:rounded-lg active:bg-active cursor-pointer lg:active:bg-inherit"
+                className="w-full lg:w-auto"
               >
-                <div className="flex gap-3 items-center">
-                  <div className="lg:hidden">{item.icon}</div>
-                  <span className="font-semibold">{t(item.i18n_key)}</span>
-                </div>
+                <a
+                  href={item.href}
+                  className="group relative flex items-center gap-3 p-5 font-semibold active:bg-active lg:rounded-lg lg:px-4 lg:py-2 lg:active:bg-inherit"
+                  onClick={() => window.innerWidth < 1024 && setIsMenuOpen(false)}
+                >
+                  <i className="transition-all group-active:rotate-[15deg] lg:hidden">
+                    {item.icon}
+                  </i>
+                  <span className="relative inline-block">
+                    {t(item.i18n_key)}
+                    <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-icon transition-all duration-200 lg:group-hover:w-full" />
+                  </span>
+                </a>
               </motion.li>
             ))}
           </motion.ul>

@@ -1,5 +1,5 @@
 const ProjectsSection = () => {
-  return <div>Hola Como estas</div>;
+  return <section id="projects" className="container h-[800px]">Hola Como estas</section>;
 };
 
 export default ProjectsSection;
