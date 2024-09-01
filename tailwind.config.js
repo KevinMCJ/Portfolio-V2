@@ -5,6 +5,10 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: '1.25rem',
+    },
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
