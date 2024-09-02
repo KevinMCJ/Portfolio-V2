@@ -45,7 +45,7 @@ export default {
     },
   },
   plugins: [
-    plugin(function ({ addComponents, theme }) {
+    plugin(function ({ addComponents, addUtilities, theme }) {
       addComponents({
         '.hstack': {
           display: 'flex',
@@ -63,6 +63,11 @@ export default {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+        },
+      });
+      addUtilities({
+        ".app-container": {
+          "@apply max-w-screen-2xl mx-auto w-full px-5": {},
         },
       });
     }),
