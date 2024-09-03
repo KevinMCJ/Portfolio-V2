@@ -54,13 +54,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="relative flex h-fit w-full bg-secondary-300 px-5 shadow-md shadow-primary-500 dark:bg-primary-600 lg:static lg:pr-3">
-      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-1 lg:flex-row">
-        <div className="flex h-24 items-center justify-between gap-4">
-          <h1 className="inline-flex gap-1 text-xl font-bold">
-            Kevin <span className="text-secondary-600">Mamani</span>
-          </h1>
-        </div>
+    <nav className="relative flex h-fit w-full bg-secondary-300 shadow-sm shadow-primary-500 dark:bg-primary-600 lg:static">
+      <div className="flex h-24 items-center justify-between gap-1 app-container lg:flex-row">
+        <h1 className="text-xl font-bold">
+          Kevin <span className="text-secondary-600">Mamani</span>
+        </h1>
 
         <button className="lg:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
