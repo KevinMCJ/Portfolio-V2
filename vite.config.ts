@@ -2,6 +2,7 @@ import { defineConfig, AliasOptions } from "vite";
 import react from "@vitejs/plugin-react";
 import tsConfigPaths from "vite-tsconfig-paths";
 import path from "path";
+import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,5 +13,5 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/components"),
     } as AliasOptions,
   },
-  plugins: [react(), tsConfigPaths()],
+  plugins: [react(), tsConfigPaths(), svgr()],
 });
