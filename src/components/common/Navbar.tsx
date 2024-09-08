@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { FaHome, FaInfoCircle, FaLightbulb, FaLaptopCode, FaEnvelope } from "react-icons/fa";
+import ToggleLanguage from "@/components/ToggleLanguage";
 
 const items = [
   {
@@ -34,6 +36,7 @@ const items = [
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth > 1023);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -55,10 +58,16 @@ const Navbar = () => {
 
   return (
     <nav className="relative flex h-fit w-full bg-secondary-300 shadow-sm shadow-primary-500 dark:bg-primary-600 lg:static">
-      <div className="flex h-24 items-center justify-between gap-1 app-container lg:flex-row">
+      <div className="flex h-24 items-center justify-between gap-1 app-container lg:flex-row lg:justify-normal">
         <h1 className="text-xl font-bold">
-          Kevin <span className="text-secondary-600">Mamani</span>
+          <Link to={"/"}>
+            Kevin <span className="text-secondary-600">Mamani</span>
+          </Link>
         </h1>
+
+        <div className="lg:ml-8">
+          <ToggleLanguage />
+        </div>
 
         <button className="lg:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
@@ -73,31 +82,58 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className={`vstack absolute left-0 right-0 top-[100%] flex whitespace-nowrap bg-inherit bg-opacity-75 text-xl backdrop-blur-md lg:static lg:mt-0 lg:flex lg:flex-row lg:justify-center`}
+            className={`vstack absolute left-0 right-0 top-[100%] flex whitespace-nowrap text-xl backdrop-blur-2xl lg:static lg:ml-auto lg:mt-0 lg:flex lg:flex-row lg:justify-center`}
           >
-            {items.map((item, key) => (
+            {pathname === "/" ? (
+              items.map((item, key) => (
+                <motion.li
+                  key={key}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: key * 0.1 }}
+                  className="w-full lg:w-auto"
+                >
+                  <a
+                    href={item.href}
+                    className="group relative flex items-center gap-3 p-5 font-semibold active:bg-active lg:rounded-lg lg:px-4 lg:py-2 lg:active:bg-inherit"
+                    onClick={() =>
+                      window.innerWidth < 1024 && setIsMenuOpen(false)
+                    }
+                  >
+                    <i className="transition-all group-active:rotate-[15deg] lg:hidden">
+                      {item.icon}
+                    </i>
+                    <span className="relative inline-block">
+                      {t(item.i18n_key)}
+                      <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-icon transition-all duration-200 lg:group-hover:w-full" />
+                    </span>
+                  </a>
+                </motion.li>
+              ))
+            ) : (
               <motion.li
-                key={key}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: key * 0.1 }}
+                transition={{ delay: 0.1 }}
                 className="w-full lg:w-auto"
               >
-                <a
-                  href={item.href}
+                <Link
+                  to={"/"}
                   className="group relative flex items-center gap-3 p-5 font-semibold active:bg-active lg:rounded-lg lg:px-4 lg:py-2 lg:active:bg-inherit"
-                  onClick={() => window.innerWidth < 1024 && setIsMenuOpen(false)}
+                  onClick={() =>
+                    window.innerWidth < 1024 && setIsMenuOpen(false)
+                  }
                 >
                   <i className="transition-all group-active:rotate-[15deg] lg:hidden">
-                    {item.icon}
+                    <FaHome className="text-icon" />
                   </i>
                   <span className="relative inline-block">
-                    {t(item.i18n_key)}
+                    {t("nav_home")}
                     <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-icon transition-all duration-200 lg:group-hover:w-full" />
                   </span>
-                </a>
+                </Link>
               </motion.li>
-            ))}
+            )}
           </motion.ul>
         )}
       </div>
