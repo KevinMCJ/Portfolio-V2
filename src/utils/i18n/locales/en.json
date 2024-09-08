@@ -4,5 +4,9 @@
   "nav_about": "About Me",
   "nav_skills": "Skills",
   "nav_projects": "Projects",
-  "nav_contact": "Contact"
+  "nav_contact": "Contact",
+  "hero-welcome": "Hi! <colored>I'm kevin</colored>",
+  "hero-role": "A passionate <colored>Full Stack Web Developer</colored> from Argentina",
+  "hero-paragraph": "I specialize in creating tech solutions, focusing on quality, commitment, and user satisfaction.",
+  "hero-download-resume": "Download resume"
 }
