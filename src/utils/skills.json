@@ -1,0 +1,114 @@
+{
+  "skills": [
+    {
+      "category": "Frontend",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "/src/assets/tech-icons/html.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "/src/assets/tech-icons/css.svg"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "/src/assets/tech-icons/javascript.svg"
+        },
+        {
+          "name": "React",
+          "icon": "/src/assets/tech-icons/react.svg"
+        },
+        {
+          "name": "React-Router",
+          "icon": "/src/assets/tech-icons/react-router.svg"
+        },
+        {
+          "name": "TailwindCSS",
+          "icon": "/src/assets/tech-icons/tailwind-css.svg"
+        },
+        {
+          "name": "Redux",
+          "icon": "/src/assets/tech-icons/redux.svg"
+        },
+        {
+          "name": "Next.js",
+          "icon": "/src/assets/tech-icons/nextjs.svg"
+        },
+        {
+          "name": "NextAuth",
+          "icon": "/src/assets/tech-icons/nextauth.png"
+        }
+      ]
+    },
+    {
+      "category": "Backend",
+      "technologies": [
+        {
+          "name": "Node.js",
+          "icon": "/src/assets/tech-icons/nodejs.svg"
+        },
+        {
+          "name": "Express",
+          "icon": "/src/assets/tech-icons/express-js.svg"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "/src/assets/tech-icons/postgresql.svg"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "/src/assets/tech-icons/mongodb.svg"
+        },
+        {
+          "name": "Sequelize",
+          "icon": "/src/assets/tech-icons/sequelize.svg"
+        },
+        {
+          "name": "Mongoose",
+          "icon": "/src/assets/tech-icons/mongoose.svg"
+        },
+        {
+          "name": "Socket.IO",
+          "icon": "/src/assets/tech-icons/socketio.png"
+        }
+      ]
+    },
+    {
+      "category": {
+        "en": "Learning",
+        "es": "Aprendiendo"
+      },
+      "technologies": [
+        {
+          "name": "Typescript",
+          "icon": "/src/assets/tech-icons/typescript.svg"
+        }
+      ]
+    },
+    {
+      "category": {
+        "en": "Tools",
+        "es": "Herramientas"
+      },
+      "technologies": [
+        {
+          "name": "Git",
+          "icon": "/src/assets/tech-icons/git.svg"
+        },
+        {
+          "name": "Postman",
+          "icon": "/src/assets/tech-icons/postman-api.svg"
+        },
+        {
+          "name": "VSCODE",
+          "icon": "/src/assets/tech-icons/visual-studio-code.svg"
+        },
+        {
+          "name": "Trello",
+          "icon": "/src/assets/tech-icons/trello.svg"
+        }
+      ]
+    }
+  ]
+}
