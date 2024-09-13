@@ -33,11 +33,11 @@
   }
 
   :root.dark {
-    --color-primary-50: 243 244 245;
-    --color-primary-100: 232 233 236;
-    --color-primary-200: 196 200 207;
-    --color-primary-300: 161 166 177;
-    --color-primary-400: 91 100 119;
+    --color-primary-50: 240 247 254;
+    --color-primary-100: 221 237 252;
+    --color-primary-200: 195 224 250;
+    --color-primary-300: 153 205 247;
+    --color-primary-400: 105 178 241;
     --color-primary-500: 20 33 61;
     --color-primary-600: 18 30 55;
     --color-primary-700: 12 20 37;
@@ -108,5 +108,15 @@
 
   .social-btn {
     @apply size-14 rounded-full bg-secondary-500 p-3 text-white shadow-[0px_0px_8px] shadow-primary-600;
+  }
+}
+
+@layer utilities {
+  .section-title {
+    @apply mb-5 mt-8 text-center text-3xl font-semibold uppercase tracking-wider shadow-primary-700 [text-shadow:_0_2px_20px_var(--tw-shadow-color)];
+  }
+
+  .section-max-h {
+    @apply max-h-[960px];
   }
 }
