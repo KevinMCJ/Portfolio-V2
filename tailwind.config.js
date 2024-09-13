@@ -42,6 +42,8 @@ export default {
         text: "rgb(var(--color-text) / <alpha-value>)",
         active: "rgb(var(--color-active) / <alpha-value>)",
         icon: "rgb(var(--color-icon) / <alpha-value>)",
+        "gradient-start": "rgb(var(--color-gradient-start) / <alpha-value>)",
+        "gradient-end": "rgb(var(--color-gradient-end) / <alpha-value>)",
       },
     },
   },
