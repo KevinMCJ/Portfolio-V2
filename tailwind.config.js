@@ -44,6 +44,11 @@ export default {
         icon: "rgb(var(--color-icon) / <alpha-value>)",
         "gradient-start": "rgb(var(--color-gradient-start) / <alpha-value>)",
         "gradient-end": "rgb(var(--color-gradient-end) / <alpha-value>)",
+        project: {
+          primary: "rgb(var(--color-project-primary) / <alpha-value>)",
+          secondary: "rgb(var(--color-project-secondary) / <alpha-value>)",
+          text: "rgb(var(--color-project-text) / <alpha-value>)",
+        },
       },
     },
   },

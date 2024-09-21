@@ -30,6 +30,9 @@
     --color-accent: 221 161 94;
     --color-gradient-start: 255 248 243;
     --color-gradient-end: 255 252 250;
+    --color-project-primary: 255 254 254;
+    --color-project-secondary: 250 237 205;
+    --color-project-text: 66 48 28;
   }
 
   :root.dark {
@@ -59,6 +62,9 @@
     --color-accent: 16 185 129;
     --color-gradient-start: 20 33 61;
     --color-gradient-end: 20 33 61;
+    --color-project-primary: 9 15 27;
+    --color-project-secondary: 16 185 129;
+    --color-project-text: 240 247 254;
   }
 
   html {
@@ -118,5 +124,9 @@
 
   .section-max-h {
     @apply max-h-[960px];
+  }
+
+  .invisible-scroll::-webkit-scrollbar {
+    display: none;
   }
 }
