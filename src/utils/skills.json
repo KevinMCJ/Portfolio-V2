@@ -97,6 +97,10 @@
           "icon": "/src/assets/tech-icons/git.svg"
         },
         {
+          "name": "Github",
+          "icon": "/src/assets/tech-icons/github.svg"
+        },
+        {
           "name": "Postman",
           "icon": "/src/assets/tech-icons/postman-api.svg"
         },
@@ -105,8 +109,16 @@
           "icon": "/src/assets/tech-icons/visual-studio-code.svg"
         },
         {
+          "name": "NPM",
+          "icon": "/src/assets/tech-icons/npm.svg"
+        },
+        {
           "name": "Trello",
           "icon": "/src/assets/tech-icons/trello.svg"
+        },
+        {
+          "name": "Slack",
+          "icon": "/src/assets/tech-icons/slack.svg"
         }
       ]
     }

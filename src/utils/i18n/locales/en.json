@@ -9,5 +9,7 @@
   "hero-role": "A passionate <colored>Full Stack Web Developer</colored> from Argentina",
   "hero-paragraph": "I specialize in creating tech solutions, focusing on quality, commitment, and user satisfaction.",
   "hero-download-resume": "Download resume",
-  "skills-title": "Tech Skills"
+  "skills-title": "Tech Skills",
+  "projects-title": "Projects",
+  "project-see-more": "More"
 }
