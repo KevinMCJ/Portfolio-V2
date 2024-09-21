@@ -8,7 +8,7 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="lg:section-max-h app-container lg:h-screen">
       <h2 className="section-title">{t("skills-title")}</h2>
-      <div className="grid items-center justify-items-center gap-5 shadow-active md:grid-cols-2 lg:px-5">
+      <div className="grid items-center justify-items-center gap-5 shadow-active md:grid-cols-2">
         {data.skills.map((skills, index) => (
           <SkillsGroup key={index} skills={skills} />
         ))}
