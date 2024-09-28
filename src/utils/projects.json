@@ -15,7 +15,10 @@
         "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
         "/src/assets/projects/sportzone/sportzone_thumbnail.png"
       ],
-      "external_link": "",
+      "external_link": {
+        "type": "Demo",
+        "url": "https://www.canva.com/design/DAGOZ0Bv6oQ/18VVwrjFKEe9lfQY2Vy68Q/watch"
+      },
       "technologies": [
         "React",
         "Next.js",
@@ -40,7 +43,10 @@
         "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus",
         "en": "Descripción del Proyecto Dos."
       },
-      "external_link": "",
+      "external_link": {
+        "type": "Demo",
+        "url": "https://pfsportzone.netlify.app/"
+      },
       "thumbnail": "/src/assets/projects/sportzone/sportzone_thumbnail.png",
       "images": [
         "/src/assets/projects/sportzone/sportzone_thumbnail.png",
@@ -58,7 +64,10 @@
         "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus",
         "en": "Descripción del Proyecto Dos."
       },
-      "external_link": "",
+      "external_link": {
+        "type": "Repo",
+        "url": "https://github.com/KevinMCJ"
+      },
       "thumbnail": "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
       "images": [
         "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
@@ -76,7 +85,10 @@
         "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus",
         "en": "Descripción del Proyecto Dos."
       },
-      "external_link": "",
+      "external_link": {
+        "type": "Demo",
+        "url": "https://gamedex-pi.netlify.app/"
+      },
       "thumbnail": "/src/assets/projects/gamedex/gamedex_thumbnail.webp",
       "images": [
         "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",

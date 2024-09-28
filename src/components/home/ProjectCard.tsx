@@ -1,20 +1,22 @@
 import { useTranslation } from "react-i18next";
 import { FaExternalLinkAlt, FaRegEye, FaInfoCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface Project {
   title: { [key: string]: string };
   description: { [key: string]: string };
   thumbnail: string;
   images: string[];
+  external_link: { type: string; url: string };
   technologies: string[];
 }
 
 interface ProjectCardsProps {
-  project: Project,
+  project: Project;
   openSlider: (images: string[]) => void;
 }
 
-const ProjectCard = ({ project, openSlider } : ProjectCardsProps) => {
+const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
   const { i18n, t } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -34,10 +36,14 @@ const ProjectCard = ({ project, openSlider } : ProjectCardsProps) => {
           </div>
         </div>
         <div className="absolute bottom-2 right-2 mt-2 flex items-center gap-2 md:static md:grow">
-          <button className="flex items-center gap-2 bg-project-secondary px-2 py-1 font-semibold shadow-sm md:rounded-md">
-            <span>Demo</span>
+          <Link
+            to={project.external_link.url}
+            target="_blank"
+            className="flex items-center gap-2 bg-project-secondary px-2 py-1 font-semibold shadow-sm md:rounded-md"
+          >
+            <span>{project.external_link.type}</span>
             <FaExternalLinkAlt />
-          </button>
+          </Link>
           <button className="flex items-center gap-2 bg-project-secondary px-2 py-1 font-semibold shadow-sm md:rounded-md">
             <span>{t("project-see-more")}</span>
             <FaInfoCircle />
