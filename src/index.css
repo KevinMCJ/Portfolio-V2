@@ -129,4 +129,12 @@
   .invisible-scroll::-webkit-scrollbar {
     display: none;
   }
+
+  .htmlFormat h2 {
+    @apply mb-4 text-2xl font-bold;
+  }
+
+  .htmlFormat ul {
+    @apply list-disc pl-5 marker:text-accent;
+  }
 }
