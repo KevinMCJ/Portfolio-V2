@@ -5,13 +5,17 @@
         "es": "FisiomFulness | Salud y Bienestar",
         "en": "FisiomFulness | Health and Care"
       },
-      "description": {
-        "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, viene de una linea en la sección 1.10.32",
-        "en": "Descripción del Proyecto Uno."
+      "unix_timestamp": {
+        "from": 1707102976,
+        "to": 1717125376
       },
-      "htmlDescription": {
-        "es": "esto es una prueba, que onda",
-        "en": "this is a test whatssup"
+      "description": {
+        "es": "Plataforma empresarial que conecta a profesionales de la fisioterapia con potenciales pacientes. Las personas pueden contratar servicios y reservar citas con el/la profesional de su elección. Adicionalmente, funciona como una comunidad donde se comparten publicaciones, conversaciones, calificaciones, preguntas y muchas más características.",
+        "en": "Business platform that connects physiotherapy professionals with potential patients. Users can hire services and book appointments with the professional of their choice. Additionally, it works as a community where posts, conversations, ratings, questions, and many more features are shared."
+      },
+      "html_description": {
+        "es": "<h3>Tareas que llevé a cabo</h3> <h4>Backend</h4> <ul> <li>Diseño y CRUDs de diferentes entidades (MongoDB/Mongoose)</li> <li>Autenticación basada en cookies con JWT</li> <li>Desarrollo de middlewares: Autorización por roles, Validación de datos con ZOD, Subida de archivos a Cloudinary</li> <li>Manejo de errores personalizado</li> </ul> <h4>Frontend</h4> <ul> <li>Sección de blogs: Detalle, Formulario de creación/edición, Mis blogs, Comentarios</li> <li>Servicios de Profesional: Formulario de creación/edición, Mis servicios, Botón WhatsApp</li> <li>Sección 'Pregunta a un experto': Formulario de pregunta y respuesta, Moderación</li> <li>Formulario de inicio de sesión / registro (profesional/usuario)</li> <li>Vista 'Editar perfil': Campos por rol (profesional/usuario), Verificación de contraseña para datos sensibles, Actualización de sesión con NextAuth</li> <li>Detalle de profesional: Ratings, Turnos, Experiencia</li> <li>Protección de rutas basada en roles con NextAuth</li> <li>Vistas responsivas siguiendo el enfoque mobile-first, aportando al diseño de Figma</li> </ul>",
+        "en": "<h3>Tasks I completed</h3> <h4>Backend</h4> <ul> <li>Design and CRUDs for various entities (MongoDB/Mongoose)</li> <li>Cookie-based authentication with JWT</li> <li>Middleware development: Role-based authorization, Data validation with ZOD, File uploads to Cloudinary</li> <li>Custom error handling</li> </ul> <h4>Frontend</h4> <ul> <li>Blog section: Detail, Creation/edit form, My blogs, Comments</li> <li>Professional services: Creation/edit form, My services, WhatsApp button</li> <li>'Ask an expert' section: Question and answer form, Moderation</li> <li>Login/registration form (professional/user)</li> <li>Edit profile view: Role-based fields (professional/user), Password verification for sensitive data, Session update with NextAuth</li> <li>Professional detail: Ratings, Appointments, Experience</li> <li>Role-based route protection with NextAuth</li> <li>Fully responsive design following a mobile-first approach, contributing to Figma design</li> </ul>"
       },
       "thumbnail": "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
       "images": [
@@ -23,19 +27,28 @@
         "type": "Demo",
         "url": "https://www.canva.com/design/DAGOZ0Bv6oQ/18VVwrjFKEe9lfQY2Vy68Q/watch"
       },
+      "video": {
+        "exists": false,
+        "url": ""
+      },
+      "tags": {
+        "en": ["Internship", "Full-stack"],
+        "es": ["Pasantía", "Full-stack"]
+      },
       "technologies": [
+        "JavaScript",
         "React",
         "Next.js",
         "TailwindCSS",
-        "React",
-        "Next.js",
-        "TailwindCSS",
-        "React",
-        "Next.js",
-        "TailwindCSS",
-        "React",
-        "Next.js",
-        "TailwindCSS"
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Socket.IO",
+        "Zod",
+        "NextAuth",
+        "Formik",
+        "Cloudinary"
       ]
     },
     {
@@ -43,17 +56,26 @@
         "es": "Sportzone",
         "en": "Sportzone"
       },
+      "unix_timestamp": {
+        "from": 1688354176,
+        "to": 1692933376
+      },
       "description": {
-        "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus",
-        "en": "Descripción del Proyecto Dos."
+        "es": "E-commerce integral de venta de artículos deportivos. A través de una búsqueda intuitiva, permite a los usuarios realizar compras a través de 'MercadoPago', despejar sus dudas si asi lo desean y almacenar su información de forma segura. Los administradores tienen la posibilidad de gestionar los artículos, categorías y responder a dudas de una manera sencilla.",
+        "en": "Comprehensive e-commerce platform for selling sports equipment. Through an intuitive search, it allows users to make purchases via 'MercadoPago', resolve any questions they may have, and securely store their information. Administrators can easily manage products, categories, and answer to inquiries."
       },
-      "htmlDescription": {
-        "es": "esto es una prueba, que onda",
-        "en": "this is a test whatssup"
+      "html_description": {
+        "es": "<p>E-commerce de artículos deportivos. Proyecto grupal donde fui clave como desarrollador full stack.</p> <h3>Algunas de las tareas más importantes que llevé a cabo</h3> <ul> <li>Contribuir en el desarrollo y optimización de la API RESTful.</li> <li>Creación de formularios necesarios para cliente y administrador utilizando Formik/Yup.</li> <li>Implementación del carrito de compras utilizando localStorage para usuarios no clientes.</li> <li>Autenticación de terceros con Google a través de Firebase.</li> <li>Barra de búsqueda con lista de sugerencias.</li> <li>Detalle de producto con carrusel de imágenes.</li> <li>Sección de preguntas y respuestas.</li> <li>Tarjeta de productos.</li> </ul>",
+        "en": "<p>Sports equipment e-commerce. Group project where I played a key role as a full stack developer.</p> <h3>Some of the most important tasks I carried out</h3> <ul> <li>Contributed to the development and optimization of the RESTful API.</li> <li>Created necessary forms for client and admin using Formik/Yup.</li> <li>Implemented the shopping cart using localStorage for non-client users.</li> <li>Third-party authentication with Google via Firebase.</li> <li>Search bar with a suggestion list.</li> <li>Product detail page with image carousel.</li> <li>Q&A section.</li> <li>Product card design.</li> </ul>"
       },
+
       "external_link": {
         "type": "Demo",
         "url": "https://pfsportzone.netlify.app/"
+      },
+      "video": {
+        "exists": false,
+        "url": ""
       },
       "thumbnail": "/src/assets/projects/sportzone/sportzone_thumbnail.png",
       "images": [
@@ -61,24 +83,49 @@
         "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
         "/src/assets/projects/chatfusion/chatfusion_thumbnail.png"
       ],
-      "technologies": ["React", "Next.js", "TailwindCSS"]
+      "tags": {
+        "en": ["Academic", "Full-stack"],
+        "es": ["Académico", "Full-stack"]
+      },
+      "technologies": [
+        "JavaScript",
+        "React",
+        "CSS Modules",
+        "Redux",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Sequelize",
+        "MercadoPago",
+        "Firebase",
+        "Yup",
+        "Formik",
+        "Cloudinary"
+      ]
     },
     {
       "title": {
         "es": "Chatfusion",
         "en": "Chatfusion"
       },
-      "description": {
-        "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus",
-        "en": "Descripción del Proyecto Dos."
+      "unix_timestamp": {
+        "from": 1723432576
       },
-      "htmlDescription": {
+      "description": {
+        "es": "Aplicación de chat en tiempo real inspirada en 'Telegram' y 'Discord'. Funcionando como una pequeña red social, las personas pueden registrarse para intercambiar conversaciones con los contactos que agregan, ya sea de manera individual o grupal. Es posible enviar fotos y videos, así como charlar a través de videollamadas, guardando un historial de mensajes y conversaciones fáciles de gestionar.",
+        "en": "Real-time chat application inspired by 'Telegram' and 'Discord'. Working like a small social network, users can register to exchange conversations with their contacts, either in a one-to-one chat or in a group. It's possible to send photos and videos, as well as chat via video calls, while keeping a history of messages and conversations that are easy to manage."
+      },
+      "html_description": {
         "es": "<h2>Aplicación de Chat en tiempo real</h2> <h3>Realizado</h3> <ul> <li>Chats individuales y grupales</li> <li>Envío de multimedia (imágenes y videos)</li> <li>Solicitudes de amistad</li> <li>Mensajería instantánea e interacción optimista con la UI</li> <li>Autenticación con NextAuth</li> <li>Totalmente responsive</li> </ul> <h3>En progreso...</h3> <ul> <li>Llamadas (video o solo audio)</li> <li>Notificaciones</li> </ul>",
-        "en": "<h2>Chat Application in real-time</h2> <h3>Completed</h3> <ul> <li>One-on-one and group chats</li> <li>Multimedia sharing (images and videos)</li> <li>Friend requests</li> <li>Instant messaging with optimistic UI interactions</li> <li>Authentication with NextAuth</li> <li>Fully responsive design</li> </ul> <h3>In progress...</h3> <ul> <li>Calls (video or audio)</li> <li>Notifications</li> </ul>"
+        "en": "<h2>Chat application in real-time</h2> <h3>Completed</h3> <ul> <li>One-on-one and group chats</li> <li>Multimedia sharing (images and videos)</li> <li>Friend requests</li> <li>Instant messaging with optimistic UI interactions</li> <li>Authentication with NextAuth</li> <li>Fully responsive design</li> </ul> <h3>In progress...</h3> <ul> <li>Calls (video or audio)</li> <li>Notifications</li> </ul>"
       },
       "external_link": {
-        "type": "Repo",
+        "type": "Repository",
         "url": "https://github.com/KevinMCJ"
+      },
+      "video": {
+        "exists": false,
+        "url": ""
       },
       "thumbnail": "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
       "images": [
@@ -86,24 +133,51 @@
         "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
         "/src/assets/projects/sportzone/sportzone_thumbnail.png"
       ],
-      "technologies": ["React", "Next.js", "TailwindCSS"]
+      "tags": {
+        "en": ["Personal Project", "Full-stack"],
+        "es": ["Proyecto Personal", "Full-stack"]
+      },
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Next.js",
+        "TailwindCSS",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Sequelize",
+        "Socket.IO",
+        "ZegoCloud",
+        "Zod",
+        "NextAuth",
+        "Formik",
+        "Cloudinary"
+      ]
     },
     {
       "title": {
         "es": "Gamedex",
         "en": "Gamedex"
       },
-      "description": {
-        "es": "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus",
-        "en": "Descripción del Proyecto Dos."
+      "unix_timestamp": {
+        "from": 1685934976,
+        "to": 1689909376
       },
-      "htmlDescription": {
-        "es": "esto es una prueba, que onda",
-        "en": "this is a test whatssup"
+      "description": {
+        "es": "SPA interactiva que utiliza el servicio de RAWG.IO para mostrar tarjetas con la última información sobre una gran cantidad de videojuegos. A través de una interfaz agradable, los usuarios pueden buscar y aplicar filtros para encontrar su juego favorito y obtener más detalles sobre él.",
+        "en": "Interactive single page application that uses the RAWG.IO service to display cards with the latest information on a wide variety of video games. Through a user-friendly interface, users can search and apply filters to find their favorite game and get more details about it."
+      },
+      "html_description": {
+        "es": "<p>Proyecto interactivo e informativo sobre videojuegos que consume la API RAWG.</p> <h3>Características</h3> <ul> <li>CRUD completo e interactivo.</li> <li>Diseño responsive utilizando Figma y siguiendo prácticas UX/UI.</li> <li>Desarrollé una API RESTful robusta que permitió una comunicación segura y eficiente entre el cliente y servidor.</li> <li>Creación y gestión de la base de datos en PostgreSQL, asegurando un almacenamiento y recuperación eficiente de los datos necesarios para la aplicación.</li> <li>Formularios con estilos adaptativos.</li> <li>Borrado y edición de juegos creados.</li> <li>Paginación intuitiva y dinámica.</li> <li>Filtros combinados.</li> <li>Alertas y confirmaciones utilizando SweetAlert2.</li> </ul>",
+        "en": "<p>Interactive and informative project about video games that consumes the RAWG API.</p> <h3>Key features and functionalities</h3> <ul> <li>Complete and interactive CRUD.</li> <li>Responsive design using Figma, following UX/UI practices.</li> <li>I developed a robust RESTful API that enabled secure and efficient communication between the client and server.</li> <li>Created and managed the PostgreSQL database, ensuring efficient storage and retrieval of the necessary data for the application.</li> <li>Forms with adaptive styles.</li> <li>Deletion and editing of created games.</li> <li>Intuitive and dynamic pagination.</li> <li>Combined filters.</li> <li>Alerts and confirmations using SweetAlert2.</li> </ul>"
       },
       "external_link": {
         "type": "Demo",
         "url": "https://gamedex-pi.netlify.app/"
+      },
+      "video": {
+        "exists": false,
+        "url": ""
       },
       "thumbnail": "/src/assets/projects/gamedex/gamedex_thumbnail.webp",
       "images": [
@@ -111,7 +185,19 @@
         "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
         "/src/assets/projects/sportzone/sportzone_thumbnail.png"
       ],
-      "technologies": ["React", "Next.js", "TailwindCSS"]
+      "tags": {
+        "en": ["Academic", "Frontend"],
+        "es": ["Académico", "Frontend"]
+      },
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS Modules",
+        "React",
+        "Redux",
+        "Yup",
+        "Formik"
+      ]
     }
   ]
 }
