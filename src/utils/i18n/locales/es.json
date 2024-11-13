@@ -1,5 +1,4 @@
 {
-  "welcomeMessage": "Bienvenido a React y react-i18next",
   "nav_home": "Inicio",
   "nav_about": "Sobre mi",
   "nav_skills": "Habilidades",
@@ -11,5 +10,10 @@
   "hero-download-resume": "Descargar C.V",
   "skills-title": "Tecnologías",
   "projects-title": "Proyectos",
-  "project-see-more": "Ver más"
+  "project-see-more": "Ver más",
+  "project-detail-info-title": "Detalles",
+  "project-detail-tech-title": "Tecnologías",
+  "from": "Desde",
+  "to": "Hasta",
+  "present": "Presente"
 }

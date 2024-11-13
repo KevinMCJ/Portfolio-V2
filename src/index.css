@@ -130,8 +130,20 @@
     display: none;
   }
 
-  .htmlFormat h2 {
-    @apply mb-4 text-2xl font-bold;
+  .htmlFormat {
+    @apply text-balance;
+  }
+
+  .htmlFormat p {
+    @apply my-2 text-wrap;
+  }
+
+  .htmlFormat h3 {
+    @apply text-lg font-bold;
+  }
+
+  .htmlFormat h4 {
+    @apply my-2 text-lg font-semibold;
   }
 
   .htmlFormat ul {

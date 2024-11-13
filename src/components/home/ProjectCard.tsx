@@ -68,7 +68,7 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="rounded-sm bg-project-secondary px-2 text-sm shadow-md shadow-secondary-200"
+              className="w-fit text-nowrap rounded-sm bg-project-secondary px-2 text-sm font-semibold shadow-md shadow-secondary-200 dark:text-black/90 dark:shadow-secondary-800"
             >
               {tech}
             </span>

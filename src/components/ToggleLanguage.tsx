@@ -9,7 +9,12 @@ const ToggleLanguage = () => {
 
   return (
     <label className="inline-flex cursor-pointer items-center">
-      <input type="checkbox" onChange={toggleLanguage} className="sr-only" />
+      <input
+        type="checkbox"
+        checked={i18next.language === "en"}
+        onChange={toggleLanguage}
+        className="sr-only"
+      />
       <div
         className={`relative inline-flex h-9 w-[4.5rem] items-center overflow-hidden rounded-full p-1 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 ${i18next.language === "es" ? "bg-yellow-300" : "bg-blue-500"}`}
       >
