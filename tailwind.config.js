@@ -72,6 +72,10 @@ export default {
           justifyContent: "center",
           alignItems: "center",
         },
+        ".align": {
+          display: "flex",
+          alignItems: "center",
+        },
       });
       addUtilities({
         ".app-container": {
