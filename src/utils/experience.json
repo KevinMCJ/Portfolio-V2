@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "company": "test company",
+      "role": "test role",
+      "type": "study",
+      "from": "date from",
+      "to": "date to",
+      "description": "Como Desarrollador Full Stack en Innovatech Solutions, he tenido la oportunidad de trabajar en un entorno dinámico y colaborativo, contribuyendo al desarrollo de aplicaciones web y móviles de alta calidad para clientes internacionales. Mi rol ha implicado la participación activa en todas las etapas del ciclo de vida del desarrollo de software, desde la concepción y el diseño hasta la implementación y el mantenimiento."
+    },
+    {
+      "company": "test company 2",
+      "role": "test role 2 ",
+      "type": "work",
+      "from": "date from 2",
+      "to": "date to 2",
+      "description": "date from 2"
+    }
+  ]
+}
