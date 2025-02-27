@@ -1,20 +1,42 @@
 {
   "items": [
     {
-      "company": "test company",
+      "company": "SoyHenry Bootcamp",
       "role": "test role",
       "type": "study",
-      "from": "date from",
-      "to": "date to",
-      "description": "Como Desarrollador Full Stack en Innovatech Solutions, he tenido la oportunidad de trabajar en un entorno dinámico y colaborativo, contribuyendo al desarrollo de aplicaciones web y móviles de alta calidad para clientes internacionales. Mi rol ha implicado la participación activa en todas las etapas del ciclo de vida del desarrollo de software, desde la concepción y el diseño hasta la implementación y el mantenimiento."
+      "unix_timestamp": {
+        "from": 1678100400,
+        "to": 1691528400
+      },
+      "description": {
+        "es": "Más de 800 horas de cursado teórico-práctico. He desarrollado múltiples proyectos individuales y en equipo, lo que me ha permitido fortalecer mi autonomía, capacidad de investigación y habilidades para afrontar cualquier desafío.",
+        "en": "Over 800 hours of theoretical and practical coursework. I have worked on multiple individual and team projects, which have helped me strengthen my autonomy, research skills, and ability to face any challenge."
+      }
     },
     {
-      "company": "test company 2",
+      "company": "FisiomFulness",
       "role": "test role 2 ",
       "type": "work",
-      "from": "date from 2",
-      "to": "date to 2",
-      "description": "date from 2"
+      "unix_timestamp": {
+        "from": 1707130800,
+        "to": 1715374800
+      },
+      "description": {
+        "es": "Durante 3 meses, apliqué mis habilidades como desarrollador fullstack en un entorno real y colaborativo, participando en la implementación de una plataforma para conectar profesionales de la fisioterapia con pacientes. Esta experiencia me permitió perfeccionar mis competencias técnicas, fortalecer mi capacidad de resolución de problemas y trabajar de manera eficiente bajo metodologías ágiles.",
+        "en": "For 3 months, I applied my skills as a full-stack developer in a real and collaborative environment, contributing to the implementation of a platform connecting physiotherapy professionals with patients. This experience allowed me to refine my technical abilities, enhance my problem-solving skills, and work efficiently under agile methodologies."
+      }
+    },
+    {
+      "company": "",
+      "role": "test role 3",
+      "type": "unknown",
+      "unix_timestamp": {
+        "from": 1641034800
+      },
+      "description": {
+        "es": "Continuare obteniendo experiencia trabajando de manera freelance y en proyectos personales. Actualmente me encuentro trabajando en \"Chatfusion\"",
+        "en": "I will continue working as a freelancer and building personal projects. Currently I'm working on \"Chatfusion\""
+      }
     }
   ]
 }
