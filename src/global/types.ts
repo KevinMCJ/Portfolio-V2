@@ -1,6 +1,6 @@
 export interface Project {
   title: { [key: string]: string };
-  unix_timestamp: { from: number; to: number | undefined };
+  unix_timestamp: { from: number; to?: number };
   description: { [key: string]: string };
   html_description: { [key: string]: string };
   thumbnail: string;
@@ -11,12 +11,10 @@ export interface Project {
   technologies: string[];
 }
 
-// * Only testing.. correct later
 export interface Experience {
   company: string;
-  role: string;
-  type: string;
-  from: string;
-  to: string;
-  description: string;
+  role?: string;
+  type: "study" | "work" | "unknown";
+  unix_timestamp: { from: number; to?: number };
+  description: { [key: string]: string };
 }
