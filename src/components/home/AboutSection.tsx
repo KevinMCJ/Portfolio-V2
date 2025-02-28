@@ -1,7 +1,31 @@
+import { Trans, useTranslation } from "react-i18next";
+
 const AboutSection = () => {
+  const { t } = useTranslation();
+
   return (
-    <section id="about" className="app-container">
-      AboutSection
+    <section id="about" className="mt-12 app-container">
+      <h2 className="section-title">{t("about-title")}</h2>
+      <div className="mx-auto grid items-center justify-center gap-6 lg:w-[90%] lg:grid-cols-[1fr,2fr] lg:flex-row lg:gap-24">
+        <div className="photo_container mx-auto lg:min-w-[320px]">
+          <img
+            className="w-full max-w-[400px]"
+            src="/src/assets/me.png"
+            alt="Kevin Mamani photo"
+          />
+        </div>
+        <p className="max-h-[400px] overflow-y-auto text-lg xl:text-xl">
+          <Trans
+            i18nKey="about-description"
+            components={{
+              u: <u className="underline-offset-4" />,
+              strong: (
+                <span className="font-semibold text-secondary-700 dark:text-primary-400" />
+              ),
+            }}
+          />
+        </p>
+      </div>
     </section>
   );
 };
