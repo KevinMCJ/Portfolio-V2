@@ -115,6 +115,11 @@
   .social-btn {
     @apply size-14 rounded-full bg-secondary-500 p-3 text-white shadow-[0px_0px_8px] shadow-primary-600;
   }
+
+  .photo_container {
+    @apply center w-full max-w-[480px] overflow-hidden bg-secondary-400 dark:bg-primary-800;
+    border-radius: 48% 52% 68% 32% / 52% 23% 77% 48%;
+  }
 }
 
 @layer utilities {
