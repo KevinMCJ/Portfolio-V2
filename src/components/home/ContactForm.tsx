@@ -23,29 +23,27 @@ const ContactForm = () => {
     let errors: Partial<ContactData> = {};
 
     if (!data.name.trim()) {
-      errors.name = "El nombre es requerido";
+      errors.name = t("errors.name.required");
     } else if (data.name.trim().length > 50) {
-      errors.name = "No puede tener mas de 50 caracteres";
+      errors.name = t("errors.common.max_length", { max: 50 });
     }
 
     if (!data.email.trim()) {
-      errors.email = "El email es requerido";
+      errors.email = t("errors.email.required");
     } else if (!emailRegex.test(data.email.trim())) {
-      errors.email = "No es un email valido";
+      errors.email = t("errors.email.invalid");
     }
 
     if (!data.message.trim()) {
-      errors.message = "El mensaje es requerido";
+      errors.message = t("errors.message.required");
     } else if (data.message.trim().length > 1500) {
-      errors.message = "No puede tener mas de 1500 caracteres";
+      errors.message = t("errors.common.max_length", { max: 1500 });
     }
 
     return errors;
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
     const newData = {

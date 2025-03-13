@@ -31,5 +31,20 @@
     "email": "correo electrónico",
     "message": "mensaje",
     "send": "enviar"
+  },
+  "errors": {
+    "common": {
+      "max_length": "No puede tener más de {{max}} caracteres"
+    },
+    "name": {
+      "required": "El nombre es requerido"
+    },
+    "email": {
+      "required": "El email es requerido",
+      "invalid": "No es un email válido"
+    },
+    "message": {
+      "required": "El mensaje es requerido"
+    }
   }
 }

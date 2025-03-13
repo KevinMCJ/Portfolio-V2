@@ -31,5 +31,20 @@
     "email": "email",
     "message": "message",
     "send": "send"
+  },
+  "errors": {
+    "common": {
+      "max_length": "Cannot be longer than {{max}} characters"
+    },
+    "name": {
+      "required": "Name is required"
+    },
+    "email": {
+      "required": "Email is required",
+      "invalid": "Not a valid email"
+    },
+    "message": {
+      "required": "Message is required"
+    }
   }
 }
