@@ -11,23 +11,23 @@ const HeroSection = () => {
       <div className="md:5 max-w-[600px] text-center md:text-start">
         <span className="text-xl">
           <Trans
-            i18nKey="hero-welcome"
+            i18nKey="content.hero_welcome"
             components={{ colored: <span className="text-accent" /> }}
           />
         </span>
         <h2 className="text-balance text-4xl font-bold">
           <Trans
-            i18nKey="hero-role"
+            i18nKey="content.hero_role"
             components={{ colored: <span className="text-accent" /> }}
           />
         </h2>
-        <p className="mb-8 mt-2 text-balance text-lg">{t("hero-paragraph")}</p>
+        <p className="mb-8 mt-2 text-balance text-lg">{t("content.hero_paragraph")}</p>
         <a
           href="/src/assets/curriculums/spanish-resume.pdf"
           download
           className="btn inline-block"
         >
-          {t("hero-download-resume")}
+          {t("content.hero_download_resume")}
         </a>
         <div className="mt-5 flex items-center justify-center gap-3 md:justify-start">
           <Link

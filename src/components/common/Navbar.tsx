@@ -3,33 +3,39 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { FaHome, FaInfoCircle, FaLightbulb, FaLaptopCode, FaEnvelope } from "react-icons/fa";
+import {
+  FaHome,
+  FaInfoCircle,
+  FaLightbulb,
+  FaLaptopCode,
+  FaEnvelope,
+} from "react-icons/fa";
 import ToggleLanguage from "@/components/ToggleLanguage";
 
 const items = [
   {
     icon: <FaHome className="text-icon" />,
-    i18n_key: "nav_home",
+    i18n_key: "content.nav_home",
     href: "#",
   },
   {
     icon: <FaInfoCircle className="text-icon" />,
-    i18n_key: "nav_about",
+    i18n_key: "content.nav_about",
     href: "#about",
   },
   {
     icon: <FaLightbulb className="text-icon" />,
-    i18n_key: "nav_skills",
+    i18n_key: "content.nav_skills",
     href: "#skills",
   },
   {
     icon: <FaLaptopCode className="text-icon" />,
-    i18n_key: "nav_projects",
+    i18n_key: "content.nav_projects",
     href: "#projects",
   },
   {
     icon: <FaEnvelope className="text-icon" />,
-    i18n_key: "nav_contact",
+    i18n_key: "content.nav_contact",
     href: "#contact",
   },
 ];
@@ -128,7 +134,7 @@ const Navbar = () => {
                     <FaHome className="text-icon" />
                   </i>
                   <span className="relative inline-block">
-                    {t("nav_home")}
+                    {t("content.nav_home")}
                     <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-icon transition-all duration-200 lg:group-hover:w-full" />
                   </span>
                 </Link>

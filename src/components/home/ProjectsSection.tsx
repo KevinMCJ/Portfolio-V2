@@ -17,7 +17,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="app-container">
       <ImageSlider isOpen={isSliderOpen} setIsOpen={setIsSliderOpen} images={sliderImages} />
-      <h2 className="section-title">{t("projects-title")}</h2>
+      <h2 className="section-title">{t("content.projects_title")}</h2>
       <div className="grid place-content-center place-items-center gap-5 xl:grid-cols-2">
         {data.projects.map((project, index) => (
           <ProjectCard key={index} project={project} openSlider={openSlider} />

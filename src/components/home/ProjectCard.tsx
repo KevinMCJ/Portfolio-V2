@@ -49,7 +49,7 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
               onClick={() => setIsDetailOpen(true)}
               className="flex items-center gap-2 bg-project-secondary px-2 py-1 font-semibold shadow-sm md:rounded-md"
             >
-              <span>{t("project-see-more")}</span>
+              <span>{t("content.project_see_more")}</span>
               <FaInfoCircle />
             </button>
           </div>

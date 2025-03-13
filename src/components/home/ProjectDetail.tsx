@@ -76,12 +76,12 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
           </div>
           <span className="align gap-1">
             <MdDateRange className="text-icon" />
-            {t("from")}: <time>{formatDate(project.unix_timestamp.from)}</time>
+            {t("common.from")}: <time>{formatDate(project.unix_timestamp.from)}</time>
           </span>
           <span className="align gap-1">
             <MdDateRange className="text-icon" />
-            {t("to")}:{" "}
-            <time>{formatDate(project.unix_timestamp.to) || t("present")}</time>
+            {t("common.to")}:{" "}
+            <time>{formatDate(project.unix_timestamp.to) || t("common.present")}</time>
           </span>
           <div className="align mt-auto gap-2">
             <Link
@@ -112,7 +112,7 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
 
       <div className="max-h-full grow overflow-y-auto">
         <h3 className="text-center text-xl font-bold uppercase text-secondary-700 dark:text-primary-300">
-          {t("project-detail-info-title")}
+          {t("content.project_detail_info_title")}
         </h3>
         <div
           className="htmlFormat"
@@ -126,7 +126,7 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
 
       <div>
         <h3 className="font-semibold text-secondary-700 dark:text-primary-300">
-          {t("project-detail-tech-title")}
+          {t("content.project_detail_tech_title")}
         </h3>
         <div className="invisible-scroll col-span-full flex items-center gap-2 overflow-x-scroll rounded-lg p-1">
           {project.technologies.map((tech, index) => (

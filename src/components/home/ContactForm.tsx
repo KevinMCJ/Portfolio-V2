@@ -78,7 +78,7 @@ const ContactForm = () => {
             className={`${errors.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
             type="text"
             name="name"
-            placeholder={t("name")}
+            placeholder={t("common.name")}
             value={data.name}
             onChange={handleChange}
           />
@@ -91,7 +91,7 @@ const ContactForm = () => {
             className={`${errors.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
             type="text"
             name="email"
-            placeholder={t("email")}
+            placeholder={t("common.email")}
             value={data.email}
             onChange={handleChange}
           />
@@ -105,7 +105,7 @@ const ContactForm = () => {
           className={`${errors.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
           name="message"
           rows={8}
-          placeholder={t("message")}
+          placeholder={t("common.message")}
           value={data.message}
           onChange={handleChange}
         />
@@ -118,7 +118,7 @@ const ContactForm = () => {
         className="flex max-w-fit cursor-pointer items-center gap-2 rounded-md bg-icon px-4 py-2 capitalize text-primary-50 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-800"
         disabled={Object.keys(errors).length ? true : false}
       >
-        {t("send")}
+        {t("common.send")}
         <IoSend className="icon" />
       </button>
     </form>

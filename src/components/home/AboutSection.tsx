@@ -5,7 +5,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="mt-12 app-container">
-      <h2 className="section-title">{t("about-title")}</h2>
+      <h2 className="section-title">{t("content.about_title")}</h2>
       <div className="mx-auto grid items-center justify-center gap-6 lg:w-[90%] lg:grid-cols-[1fr,2fr] lg:flex-row lg:gap-24">
         <div className="photo_container mx-auto lg:min-w-[320px]">
           <img
@@ -16,7 +16,7 @@ const AboutSection = () => {
         </div>
         <p className="max-h-[400px] overflow-y-auto text-lg xl:text-xl">
           <Trans
-            i18nKey="about-description"
+            i18nKey="content.about_description"
             components={{
               u: <u className="underline-offset-4" />,
               strong: (

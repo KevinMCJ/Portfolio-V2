@@ -54,7 +54,7 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
       </div>
       <span
         className={`${isEven ? "lg:order-1" : "lg:order-3"} my-5 bg-primary-500 text-center text-lg font-semibold uppercase lg:order-1 lg:flex-1 lg:self-start`}
-      >{`${formatDate(item.unix_timestamp.from)} - ${formatDate(item.unix_timestamp.to) || t("always")}`}</span>
+      >{`${formatDate(item.unix_timestamp.from)} - ${formatDate(item.unix_timestamp.to) || t("common.always")}`}</span>
       <div
         className={`${isEven ? "lg:order-3 lg:items-start" : "lg:order-1 lg:items-end"} w-full lg:flex-1`}
       >
@@ -67,7 +67,7 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
             }`}
           />
           <h2 className="text-center font-bold capitalize md:text-start">
-            {item.company || t("self-taught")}
+            {item.company || t("common.self_taught")}
           </h2>
           <p className="text-balance tracking-tight md:text-wrap md:tracking-normal">
             {item.description[currentLanguage]}
