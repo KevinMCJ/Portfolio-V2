@@ -1,6 +1,7 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import { IoSend } from "react-icons/io5";
+import { FaCircleCheck, FaFaceSadTear } from "react-icons/fa6";
 
 interface ContactData {
   name: string;
@@ -8,16 +9,18 @@ interface ContactData {
   message: string;
 }
 
+const sleep = (delay: number) => new Promise((resolve) => setTimeout(resolve, delay));
+
+const initialData = { name: "", email: "", message: "" };
 const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+type SubmitStatus = "success" | "error" | null;
 
 const ContactForm = () => {
   const { t } = useTranslation();
-  const [data, setData] = useState<ContactData>({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [data, setData] = useState<ContactData>(initialData);
   const [errors, setErrors] = useState<Partial<ContactData>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
 
   const validate = (data: ContactData) => {
     let errors: Partial<ContactData> = {};
@@ -55,13 +58,29 @@ const ContactForm = () => {
     setData(newData);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const resetForm = () => {
+    setData(initialData);
+    setErrors({});
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
     const submitErrors = validate(data);
     setErrors(submitErrors);
+    if (Object.keys(submitErrors).length) return;
 
-    if (!Object.keys(submitErrors).length) {
-      alert(JSON.stringify(data));
+    try {
+      setIsSubmitting(true);
+      await sleep(2000);
+      setSubmitStatus("success");
+      resetForm();
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      // ? After 2,5 seconds the message will dis
+      setTimeout(() => setSubmitStatus(null), 2500);
     }
   };
 
@@ -73,10 +92,11 @@ const ContactForm = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <input
-            className={`${errors.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+            className={`${errors.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon disabled:opacity-60 dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
             type="text"
             name="name"
             placeholder={t("common.name")}
+            disabled={isSubmitting}
             value={data.name}
             onChange={handleChange}
           />
@@ -86,10 +106,11 @@ const ContactForm = () => {
         </div>
         <div>
           <input
-            className={`${errors.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+            className={`${errors.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
             type="text"
             name="email"
             placeholder={t("common.email")}
+            disabled={isSubmitting}
             value={data.email}
             onChange={handleChange}
           />
@@ -100,10 +121,11 @@ const ContactForm = () => {
       </div>
       <div>
         <textarea
-          className={`${errors.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+          className={`${errors.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
           name="message"
           rows={8}
           placeholder={t("common.message")}
+          disabled={isSubmitting}
           value={data.message}
           onChange={handleChange}
         />
@@ -111,14 +133,39 @@ const ContactForm = () => {
           <span className="text-sm text-red-500">{errors.message}</span>
         )}
       </div>
-      <button
-        type="submit"
-        className="flex max-w-fit cursor-pointer items-center gap-2 rounded-md bg-icon px-4 py-2 capitalize text-primary-50 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-800"
-        disabled={Object.keys(errors).length ? true : false}
-      >
-        {t("common.send")}
-        <IoSend className="icon" />
-      </button>
+      <div className="vstack gap-6 min-[840px]:flex-row min-[840px]:justify-between">
+        {submitStatus && (
+          <div
+            className={`flex items-center gap-3 text-sm min-[840px]:order-2 ${submitStatus === "success" ? "text-green-600 dark:text-green-500" : "text-red-500"}`}
+          >
+            {submitStatus === "success" ? (
+              <FaCircleCheck className="size-6 text-lg" />
+            ) : (
+              <FaFaceSadTear className="size-6 text-lg" />
+            )}
+            <span>
+              {submitStatus === "success" ? t("form.success") : t("form.error")}
+            </span>
+          </div>
+        )}
+        <button
+          type="submit"
+          className="flex max-w-fit cursor-pointer items-center gap-2 rounded-md bg-icon px-4 py-2 capitalize text-primary-50 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-800 min-[840px]:order-1"
+          disabled={Object.keys(errors).length > 0 || isSubmitting}
+        >
+          {isSubmitting ? (
+            <Fragment>
+              {t("common.sending") + "..."}
+              <div className="size-4 animate-spin rounded-full border-2 border-inherit border-t-transparent"></div>
+            </Fragment>
+          ) : (
+            <Fragment>
+              {t("common.send")}
+              <IoSend className="icon" />
+            </Fragment>
+          )}
+        </button>
+      </div>
     </form>
   );
 };
