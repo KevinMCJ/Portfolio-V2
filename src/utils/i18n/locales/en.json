@@ -30,7 +30,8 @@
     "name": "name",
     "email": "email",
     "message": "message",
-    "send": "send"
+    "send": "send",
+    "sending": "sending"
   },
   "errors": {
     "common": {
@@ -46,5 +47,9 @@
     "message": {
       "required": "Message is required"
     }
+  },
+  "form": {
+    "success": "Thank you for your message! I will get back to you soon.",
+    "error": "Something went wrong. Please try again later."
   }
 }

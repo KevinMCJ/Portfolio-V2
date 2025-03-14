@@ -30,7 +30,8 @@
     "name": "nombre",
     "email": "correo electrónico",
     "message": "mensaje",
-    "send": "enviar"
+    "send": "enviar",
+    "sending": "enviando"
   },
   "errors": {
     "common": {
@@ -46,5 +47,9 @@
     "message": {
       "required": "El mensaje es requerido"
     }
+  },
+  "form": {
+    "success": "Gracias por tu mensaje, me pondré en contacto a la brevedad.",
+    "error": "Hubo un error, intente más tarde."
   }
 }
