@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NotFound = () => {
   const { t } = useTranslation();
+  const [seconds, setSeconds] = useState(5);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      seconds > 0 ? setSeconds((prev) => prev - 1) : navigate("/");
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [seconds]);
 
   return (
     <main className="grid min-h-screen place-items-center bg-inherit p-4">
@@ -16,7 +27,7 @@ const NotFound = () => {
         <p className="mb-6 text-xl">
           <Trans
             i18nKey="content.not_found_redirect"
-            values={{ seconds: 5 }}
+            values={{ seconds }}
             components={{
               time: <span className="font-semibold text-secondary-600" />,
             }}
