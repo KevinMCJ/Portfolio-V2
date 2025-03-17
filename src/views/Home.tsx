@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import {
   HeroSection,
   SkillsSection,
@@ -9,14 +10,16 @@ import {
 
 const Home = () => {
   return (
-    <div className="vstack">
+    <Fragment>
       <HeroSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <AboutSection />
-      <ContactSection />
-    </div>
+      <div className="vstack gap-14 md:gap-20">
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <AboutSection />
+        <ContactSection />
+      </div>
+    </Fragment>
   );
 };
 

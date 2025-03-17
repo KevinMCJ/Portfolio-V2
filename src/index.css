@@ -124,7 +124,7 @@
 
 @layer utilities {
   .section-title {
-    @apply mb-5 mt-8 text-center text-3xl font-semibold uppercase tracking-wider shadow-primary-700 [text-shadow:_0_2px_20px_var(--tw-shadow-color)];
+    @apply mb-8 mt-5 text-center text-3xl font-semibold uppercase tracking-wider shadow-primary-700 [text-shadow:_0_6px_20px_var(--tw-shadow-color)] dark:shadow-primary-900 dark:[text-shadow:_0_6px_15px_var(--tw-shadow-color)];
   }
 
   .section-max-h {

@@ -11,7 +11,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="app-container">
-      <h2 className="section-title">{t("content.contact_title")}</h2>
+      <h2 className="section-title !mb-5">{t("content.contact_title")}</h2>
       <span
         className="mx-auto block max-w-fit cursor-pointer p-2 text-xl tracking-wide underline decoration-icon underline-offset-4 sm:text-2xl"
         onClick={handleCopy}
