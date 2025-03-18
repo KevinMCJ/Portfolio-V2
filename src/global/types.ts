@@ -1,3 +1,13 @@
+export interface Technology {
+  name: string;
+  icon: string;
+}
+
+export interface SkillGroup {
+  category: string | { [key: string]: string };
+  technologies: Technology[];
+}
+
 export interface Project {
   title: { [key: string]: string };
   unix_timestamp: { from: number; to?: number };
