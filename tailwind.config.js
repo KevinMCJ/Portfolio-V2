@@ -10,6 +10,9 @@ export default {
       padding: "1.25rem",
     },
     extend: {
+      screens: {
+        "navbar-break": "1100px",
+      },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
