@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Experience } from "@/global/types";
 import TimelineEvent from "../TimelineEvent";
 import data from "@/utils/experience.json";
 
@@ -11,7 +12,7 @@ const ExperienceSection = () => {
       <div className="center relative mx-auto flex-col gap-12 md:w-[90%]">
         <div className="absolute left-1/2 top-6 z-0 h-full w-1 -translate-x-1/2 transform rounded-md bg-secondary-400 dark:bg-primary-400" />
         {data.items.map((item, index) => (
-          <TimelineEvent item={item} key={index} isEven={index % 2 == 0} />
+          <TimelineEvent item={item as Experience} key={index} isEven={index % 2 == 0} />
         ))}
       </div>
     </section>

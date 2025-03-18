@@ -7,7 +7,7 @@ export interface Project {
   images: string[];
   external_link: { type: string; url: string };
   video: { exists: boolean; url: string };
-  tags: { [key: string]: string };
+  tags: { [key: string]: string[] };
   technologies: string[];
 }
 

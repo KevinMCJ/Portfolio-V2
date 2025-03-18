@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Experience } from "@/global/types";
 import { IoIosSchool } from "react-icons/io";
 import { MdWork } from "react-icons/md";
 import { BsQuestion } from "react-icons/bs";
+import { Experience } from "@/global/types";
 
 interface TimeLineEventProps {
   item: Experience;
@@ -28,14 +28,11 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
     visible: { opacity: 1 },
   };
 
-  const formatDate = (timestamp: number | undefined, lang: string = currentLanguage,) => {
+  const formatDate = (timestamp?: number, lang: string = currentLanguage) => {
     if (!timestamp) return;
     const date = new Date(timestamp * 1000);
-    const monthNames = new Intl.DateTimeFormat(lang, { month: "short" }).format(
-      date,
-    );
+    const monthNames = new Intl.DateTimeFormat(lang, { month: "short" }).format(date);
     const year = date.getFullYear();
-
     const formattedMonth = monthNames.toUpperCase() + ".";
     return `${formattedMonth} ${year}`;
   };
