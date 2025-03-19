@@ -1,19 +1,14 @@
+import { ContactData } from "@/global/types";
 import { FormEvent, useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import { IoSend } from "react-icons/io5";
 import { FaCircleCheck, FaFaceSadTear } from "react-icons/fa6";
+import { contactValidator } from "@/utils/validators";
 import emailjs from "@emailjs/browser";
-
-interface ContactData {
-  name: string;
-  email: string;
-  message: string;
-}
 
 type SubmitStatus = "success" | "error" | null;
 
 const initialData = { name: "", email: "", message: "" };
-const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 const ContactForm = () => {
   const { t } = useTranslation();
@@ -21,30 +16,6 @@ const ContactForm = () => {
   const [errors, setErrors] = useState<Partial<ContactData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
-
-  const validate = (data: ContactData) => {
-    let errors: Partial<ContactData> = {};
-
-    if (!data.name.trim()) {
-      errors.name = t("errors.name.required");
-    } else if (data.name.trim().length > 50) {
-      errors.name = t("errors.common.max_length", { max: 50 });
-    }
-
-    if (!data.email.trim()) {
-      errors.email = t("errors.email.required");
-    } else if (!emailRegex.test(data.email.trim())) {
-      errors.email = t("errors.email.invalid");
-    }
-
-    if (!data.message.trim()) {
-      errors.message = t("errors.message.required");
-    } else if (data.message.trim().length > 1500) {
-      errors.message = t("errors.common.max_length", { max: 1500 });
-    }
-
-    return errors;
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -54,7 +25,7 @@ const ContactForm = () => {
       [name]: value,
     };
 
-    setErrors(validate(newData));
+    setErrors(contactValidator(newData));
     setData(newData);
   };
 
@@ -66,7 +37,7 @@ const ContactForm = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const submitErrors = validate(data);
+    const submitErrors = contactValidator(data);
     setErrors(submitErrors);
     if (Object.keys(submitErrors).length) return;
 

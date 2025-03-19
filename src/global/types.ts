@@ -34,3 +34,11 @@ export interface Experience {
   unix_timestamp: { from: number; to?: number };
   description: { [key in SupportedLanguage]: string };
 }
+
+// ? Forms
+
+export interface ContactData {
+  name: string;
+  email: string;
+  message: string;
+}
