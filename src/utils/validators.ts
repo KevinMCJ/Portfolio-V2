@@ -35,11 +35,13 @@ export const validateExperience = (item: any): item is Experience => {
 
 export const contactValidator = (data: ContactData) => {
   let errors: Partial<ContactData> = {};
+  const MAX_NAME_LENGTH = 50;
+  const MAX_MESSAGE_LENGTH = 1500;
 
   if (!data.name.trim()) {
     errors.name = t("errors.name.required");
-  } else if (data.name.trim().length > 50) {
-    errors.name = t("errors.common.max_length", { max: 50 });
+  } else if (data.name.trim().length > MAX_NAME_LENGTH) {
+    errors.name = t("errors.common.max_length", { max: MAX_NAME_LENGTH });
   }
 
   if (!data.email.trim()) {
@@ -50,8 +52,8 @@ export const contactValidator = (data: ContactData) => {
 
   if (!data.message.trim()) {
     errors.message = t("errors.message.required");
-  } else if (data.message.trim().length > 1500) {
-    errors.message = t("errors.common.max_length", { max: 1500 });
+  } else if (data.message.trim().length > MAX_MESSAGE_LENGTH) {
+    errors.message = t("errors.common.max_length", { max: MAX_MESSAGE_LENGTH });
   }
 
   return errors;
