@@ -5,8 +5,10 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <Fragment>
-      <Navbar />
-      <main>
+      <header>
+        <Navbar />
+      </header>
+      <main className="min-h-screen">
         <Outlet />
         <ThemeButton />
       </main>
