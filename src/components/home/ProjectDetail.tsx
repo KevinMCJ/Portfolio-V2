@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
-import { Project } from "@/global/types";
+import { Project, SupportedLanguage } from "@/global/types";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ interface ProjectDetailProps {
 const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
   const { t, i18n } = useTranslation();
   const detailRef = useRef<HTMLDialogElement | null>(null);
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language as SupportedLanguage;
 
   useEffect(() => {
     if (!detailRef) return;

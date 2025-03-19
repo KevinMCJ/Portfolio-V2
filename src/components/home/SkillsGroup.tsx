@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { SkillGroup } from "@/global/types";
+import { SkillGroup, SupportedLanguage } from "@/global/types";
 
 interface SkillsGroupProps {
   skills: SkillGroup;
@@ -13,7 +13,7 @@ const SkillsGroup = ({ skills }: SkillsGroupProps) => {
       <h3 className="mb-5 bg-gradient-to-r from-secondary-900 to-secondary-400 bg-clip-text text-center text-2xl font-bold uppercase text-transparent dark:from-primary-900 dark:via-primary-200 dark:to-primary-800">
         {typeof skills.category === "string"
           ? skills.category
-          : skills.category[i18n.language]}
+          : skills.category[i18n.language as SupportedLanguage]}
       </h3>
       <div className="flex flex-wrap place-content-center gap-10 md:gap-14 md:gap-y-10">
         {skills.technologies.map((tech) => (

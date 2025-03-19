@@ -1,7 +1,7 @@
+import { Project, SupportedLanguage } from "@/global/types";
 import { useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Project } from "@/global/types";
 import { FaExternalLinkAlt, FaRegEye, FaInfoCircle } from "react-icons/fa";
 import ProjectDetail from "./ProjectDetail";
 
@@ -13,7 +13,7 @@ interface ProjectCardsProps {
 const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
   const [isDetailOpen, setIsDetailOpen] = useState<boolean>(false);
   const { i18n, t } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language as SupportedLanguage;
 
   return (
     <Fragment>

@@ -4,14 +4,14 @@ import { useTranslation } from "react-i18next";
 import { IoIosSchool } from "react-icons/io";
 import { MdWork } from "react-icons/md";
 import { BsQuestion } from "react-icons/bs";
-import { Experience } from "@/global/types";
+import { Experience, ExperienceType, SupportedLanguage } from "@/global/types";
 
 interface TimeLineEventProps {
   item: Experience;
   isEven: boolean;
 }
 
-const icon = {
+const icon: Record<ExperienceType, JSX.Element> = {
   study: <IoIosSchool className="size-full" />,
   work: <MdWork className="size-full" />,
   unknown: <BsQuestion className="size-full" />,
@@ -21,7 +21,7 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language as SupportedLanguage;
 
   const variants = {
     hidden: { opacity: 0 },
@@ -31,7 +31,9 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
   const formatDate = (timestamp?: number, lang: string = currentLanguage) => {
     if (!timestamp) return;
     const date = new Date(timestamp * 1000);
-    const monthNames = new Intl.DateTimeFormat(lang, { month: "short" }).format(date);
+    const monthNames = new Intl.DateTimeFormat(lang, { month: "short" }).format(
+      date,
+    );
     const year = date.getFullYear();
     const formattedMonth = monthNames.toUpperCase() + ".";
     return `${formattedMonth} ${year}`;
