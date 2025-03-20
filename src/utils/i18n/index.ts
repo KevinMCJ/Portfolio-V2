@@ -11,7 +11,7 @@ const resources = {
 // * Configuration
 i18n.use(initReactI18next).init({
   resources,
-  lng: "es",
+  lng: localStorage.getItem('lang') || 'es',
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,
