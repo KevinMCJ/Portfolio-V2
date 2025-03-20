@@ -1,5 +1,5 @@
 // ? File used to validator functions: JSON data, forms... etc.
-import { ContactData, Experience } from "@/global/types";
+import { ContactData, Experience, SupportedLanguage } from "@/global/types";
 import { supportedLanguages, experiencesTypes } from "@/global/constants";
 import { t } from "i18next";
 
@@ -32,6 +32,10 @@ export const validateExperience = (item: any): item is Experience => {
 
   return true;
 };
+
+export const isValidLanguage = (languageCode: any): languageCode is SupportedLanguage => {
+  return supportedLanguages.includes(languageCode);
+}
 
 export const contactValidator = (data: ContactData) => {
   let errors: Partial<ContactData> = {};
