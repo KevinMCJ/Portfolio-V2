@@ -131,6 +131,11 @@
     @apply max-h-[960px];
   }
 
+  .invisible-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+  }
+
   .invisible-scroll::-webkit-scrollbar {
     display: none;
   }
