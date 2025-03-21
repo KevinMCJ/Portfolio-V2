@@ -9,6 +9,7 @@ import { Experience, ExperienceType, SupportedLanguage } from "@/global/types";
 interface TimeLineEventProps {
   item: Experience;
   isEven: boolean;
+  index: number;
 }
 
 const icon: Record<ExperienceType, JSX.Element> = {
@@ -17,16 +18,11 @@ const icon: Record<ExperienceType, JSX.Element> = {
   unknown: <BsQuestion className="size-full" />,
 };
 
-const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
+const TimelineEvent = ({ item, isEven, index }: TimeLineEventProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language as SupportedLanguage;
-
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
   const formatDate = (timestamp?: number, lang: string = currentLanguage) => {
     if (!timestamp) return;
@@ -39,22 +35,45 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
     return `${formattedMonth} ${year}`;
   };
 
+  // ? Fade variants with customizable duration/delay
+  const createFadeInVariants = (duration: number, extraDelay: number = 0) => ({
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration,
+        delay: index * 0.2 + extraDelay,
+        ease: "easeOut",
+      },
+    },
+  });
+
+  const containerVariants = createFadeInVariants(0.5);
+  const iconVariants = createFadeInVariants(0.3, 0.1);
+  const contentVariants = createFadeInVariants(0.4, 0.2);
+
   return (
     <motion.article
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      transition={{ duration: 0.6, delay: 0.2 }}
+      variants={containerVariants}
       className="center relative min-h-28 w-full flex-col gap-3 lg:flex-row lg:gap-[120px]"
     >
-      <div className="center size-16 min-w-fit rounded-full border-4 border-secondary-400 bg-secondary-200 p-3 text-icon shadow-md dark:border-primary-400 dark:bg-primary-500 dark:text-primary-400 lg:absolute lg:order-2 lg:self-start">
+      <motion.div
+        variants={iconVariants}
+        className="center size-16 min-w-fit rounded-full border-4 border-secondary-400 bg-secondary-200 p-3 text-icon shadow-md dark:border-primary-400 dark:bg-primary-500 dark:text-primary-400 lg:absolute lg:order-2 lg:self-start"
+      >
         {icon[item.type]}
-      </div>
-      <span
+      </motion.div>
+
+      <motion.span
+        variants={contentVariants}
         className={`${isEven ? "lg:order-1" : "lg:order-3"} my-5 bg-primary-500 text-center text-lg font-semibold uppercase lg:order-1 lg:flex-1 lg:self-start`}
-      >{`${formatDate(item.unix_timestamp.from)} - ${formatDate(item.unix_timestamp.to) || t("common.always")}`}</span>
-      <div
+      >{`${formatDate(item.unix_timestamp.from)} - ${formatDate(item.unix_timestamp.to) || t("common.always")}`}</motion.span>
+
+      <motion.div
+        variants={contentVariants}
         className={`${isEven ? "lg:order-3 lg:items-start" : "lg:order-1 lg:items-end"} w-full lg:flex-1`}
       >
         <div className="relative mx-auto w-full max-w-[300px] space-y-2 rounded-md bg-secondary-200 p-4 dark:bg-primary-700 md:w-full md:max-w-[600px]">
@@ -72,7 +91,7 @@ const TimelineEvent = ({ item, isEven }: TimeLineEventProps) => {
             {item.description[currentLanguage]}
           </p>
         </div>
-      </div>
+      </motion.div>
     </motion.article>
   );
 };
