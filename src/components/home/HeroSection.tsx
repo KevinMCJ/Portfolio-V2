@@ -1,6 +1,7 @@
 import { useTranslation, Trans } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiOutlineDownload } from "react-icons/hi";
 import programmer from "@/assets/hero-programmer.png";
 
 const HeroSection = () => {
@@ -21,13 +22,16 @@ const HeroSection = () => {
             components={{ colored: <span className="text-accent" /> }}
           />
         </h2>
-        <p className="mb-8 mt-2 text-balance text-lg">{t("content.hero_paragraph")}</p>
+        <p className="mb-8 mt-2 text-balance text-lg">
+          {t("content.hero_paragraph")}
+        </p>
         <a
           href="/src/assets/curriculums/spanish-resume.pdf"
           download
-          className="btn inline-block"
+          className="btn inline-flex items-center gap-2"
         >
           {t("content.hero_download_resume")}
+          <HiOutlineDownload className="size-6" />
         </a>
         <div className="mt-5 flex items-center justify-center gap-3 md:justify-start">
           <Link
