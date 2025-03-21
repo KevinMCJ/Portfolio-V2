@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { MdDateRange } from "react-icons/md";
 import { FaLink, FaVideo, FaWindowClose } from "react-icons/fa";
 import DOMPurify from "isomorphic-dompurify";
+import DraggableList from "../common/DraggableList";
 
 interface ProjectDetailProps {
   isOpen: boolean;
@@ -76,12 +77,15 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
           </div>
           <span className="align gap-1">
             <MdDateRange className="text-icon" />
-            {t("common.from")}: <time>{formatDate(project.unix_timestamp.from)}</time>
+            {t("common.from")}:{" "}
+            <time>{formatDate(project.unix_timestamp.from)}</time>
           </span>
           <span className="align gap-1">
             <MdDateRange className="text-icon" />
             {t("common.to")}:{" "}
-            <time>{formatDate(project.unix_timestamp.to) || t("common.present")}</time>
+            <time>
+              {formatDate(project.unix_timestamp.to) || t("common.present")}
+            </time>
           </span>
           <div className="align mt-auto gap-2">
             <Link
@@ -128,16 +132,10 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
         <h3 className="font-semibold text-secondary-700 dark:text-primary-300">
           {t("content.project_detail_tech_title")}
         </h3>
-        <div className="invisible-scroll col-span-full flex items-center gap-2 overflow-x-scroll rounded-lg p-1">
-          {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="w-fit text-nowrap rounded-sm bg-project-secondary px-2 text-sm font-semibold shadow-md shadow-secondary-200 dark:text-black/90 dark:shadow-secondary-800"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        <DraggableList
+          items={project.technologies}
+          itemClassName="w-fit text-nowrap shadow-md shadow-secondary-200 dark:shadow-secondary-800"
+        />
       </div>
     </motion.dialog>
   );

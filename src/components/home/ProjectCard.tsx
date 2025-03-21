@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt, FaRegEye, FaInfoCircle } from "react-icons/fa";
 import ProjectDetail from "./ProjectDetail";
+import DraggableList from "../common/DraggableList";
 
 interface ProjectCardsProps {
   project: Project;
@@ -30,13 +31,14 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
           >
             <img
               src={project.thumbnail}
-              className="h-[300px] max-h-[200px] object-cover sm:max-h-none"
+              alt={project.title[currentLanguage]}
+              className="h-[200px] w-full object-cover sm:max-h-none md:h-[300px]"
             />
             <div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
               <FaRegEye className="text-3xl text-white" />
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 mt-2 flex items-center gap-2 md:static md:grow">
+          <div className="absolute bottom-2 right-2 mt-2 flex items-center gap-2 md:static md:mt-2 md:grow">
             <Link
               to={project.external_link.url}
               target="_blank"
@@ -59,21 +61,15 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
           <h3 className="mb-2 mt-1 text-balance text-xl font-semibold md:mt-0 md:text-center">
             {project.title[currentLanguage]}
           </h3>
-          <p className="max-h-[10rem] grow overflow-y-auto text-balance md:max-h-none">
+          <p className="invisible-scroll max-h-[8rem] grow overflow-y-auto text-balance md:max-h-none">
             {project.description[currentLanguage]}
           </p>
         </div>
 
-        <div className="invisible-scroll col-span-full mt-2 flex items-center gap-2 overflow-x-scroll rounded-lg p-1">
-          {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="w-fit text-nowrap rounded-sm bg-project-secondary px-2 text-sm font-semibold shadow-md shadow-secondary-200 dark:text-black/90 dark:shadow-secondary-800"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        <DraggableList
+          items={project.technologies}
+          className="col-span-full mt-2"
+        />
       </article>
     </Fragment>
   );
