@@ -52,6 +52,7 @@ const HeroSection = () => {
       </div>
       <img
         src={programmer}
+        alt={t("content.hero_img_alt")}
         className="w-full max-w-[400px] scale-100 md:max-w-[800px]"
       />
     </section>

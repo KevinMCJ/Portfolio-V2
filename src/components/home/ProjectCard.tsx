@@ -31,7 +31,7 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
           >
             <img
               src={project.thumbnail}
-              alt={project.title[currentLanguage]}
+              alt={`${project.title[currentLanguage]} thumbnail`}
               className="h-[200px] w-full object-cover sm:max-h-none md:h-[300px]"
             />
             <div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
