@@ -1,4 +1,4 @@
-import { ContactData } from "@/global/types";
+import { ContactData, ContactFormErrors } from "@/global/types";
 import { FormEvent, useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import { IoSend } from "react-icons/io5";
@@ -9,13 +9,21 @@ import emailjs from "@emailjs/browser";
 type SubmitStatus = "success" | "error" | null;
 
 const initialData = { name: "", email: "", message: "" };
+const initialTouched = { name: false, email: false, message: false };
 
 const ContactForm = () => {
   const { t } = useTranslation();
   const [data, setData] = useState<ContactData>(initialData);
-  const [errors, setErrors] = useState<Partial<ContactData>>({});
+  const [errors, setErrors] = useState<ContactFormErrors>({});
+  const [touched, setTouched] = useState(initialTouched);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
+
+  const resetForm = () => {
+    setData(initialData);
+    setTouched(initialTouched);
+    setErrors({});
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -25,17 +33,42 @@ const ContactForm = () => {
       [name]: value,
     };
 
-    setErrors(contactValidator(newData));
     setData(newData);
+
+    // * Validate field only if was touched
+    if (touched[name as keyof ContactData]) {
+      const fieldToValidate = { ...data, [name]: value };
+      setErrors((prev) => ({
+        ...prev,
+        ...contactValidator(fieldToValidate),
+      }));
+    }
   };
 
-  const resetForm = () => {
-    setData(initialData);
-    setErrors({});
+  // * Handle touched field status on focus
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target;
+
+    setTouched((prev) => ({
+      ...prev,
+      [name]: true,
+    }));
+
+    const fieldToValidate = { ...data };
+    setErrors((prev) => ({
+      ...prev,
+      ...contactValidator(fieldToValidate),
+    }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    setTouched({
+      name: true,
+      email: true,
+      message: true,
+    });
 
     const submitErrors = contactValidator(data);
     setErrors(submitErrors);
@@ -69,44 +102,47 @@ const ContactForm = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <input
-            className={`${errors.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon disabled:opacity-60 dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+            className={`${errors.name && touched.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon disabled:opacity-60 dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
             type="text"
             name="name"
             placeholder={t("common.name")}
             disabled={isSubmitting}
             value={data.name}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
-          {errors.name && (
+          {errors.name && touched.name && (
             <span className="text-sm text-red-500">{errors.name}</span>
           )}
         </div>
         <div>
           <input
-            className={`${errors.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+            className={`${errors.email && touched.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
             type="text"
             name="email"
             placeholder={t("common.email")}
             disabled={isSubmitting}
             value={data.email}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
-          {errors.email && (
+          {errors.email && touched.email && (
             <span className="text-sm text-red-500">{errors.email}</span>
           )}
         </div>
       </div>
       <div>
         <textarea
-          className={`${errors.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+          className={`${errors.message && touched.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
           name="message"
           rows={8}
           placeholder={t("common.message")}
           disabled={isSubmitting}
           value={data.message}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
-        {errors.message && (
+        {errors.message && touched.message && (
           <span className="text-sm text-red-500">{errors.message}</span>
         )}
       </div>
