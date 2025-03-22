@@ -133,7 +133,7 @@ const ContactForm = () => {
       </div>
       <div>
         <textarea
-          className={`${errors.message && touched.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+          className={`${errors.message && touched.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full resize-none rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
           name="message"
           rows={8}
           placeholder={t("common.message")}
