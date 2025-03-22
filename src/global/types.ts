@@ -42,3 +42,5 @@ export interface ContactData {
   email: string;
   message: string;
 }
+
+export type ContactFormErrors = Partial<Record<keyof ContactData, string>>;

@@ -1,5 +1,5 @@
 // ? File used to validator functions: JSON data, forms... etc.
-import { ContactData, Experience, SupportedLanguage } from "@/global/types";
+import { ContactData, ContactFormErrors, Experience, SupportedLanguage } from "@/global/types";
 import { supportedLanguages, experiencesTypes } from "@/global/constants";
 import { t } from "i18next";
 
@@ -38,7 +38,7 @@ export const isValidLanguage = (languageCode: any): languageCode is SupportedLan
 }
 
 export const contactValidator = (data: ContactData) => {
-  let errors: Partial<ContactData> = {};
+  let errors: ContactFormErrors = {};
   const MAX_NAME_LENGTH = 50;
   const MAX_MESSAGE_LENGTH = 1500;
 
