@@ -18,10 +18,10 @@ const NotFound = () => {
   return (
     <main className="grid min-h-screen place-items-center bg-inherit p-4">
       <div className="text-center">
-        <h1 className="bg-gradient-to-br from-secondary-300 to-secondary-500 bg-clip-text text-center text-9xl font-bold uppercase text-transparent dark:from-primary-400 dark:to-primary-100/55">
+        <h1 className="from-secondary-300 to-secondary-500 dark:from-primary-400 dark:to-primary-100/55 bg-linear-to-br bg-clip-text text-center text-9xl font-bold text-transparent uppercase">
           404
         </h1>
-        <h2 className="mb-3 text-3xl font-semibold text-secondary-900 dark:text-primary-200">
+        <h2 className="text-secondary-900 dark:text-primary-200 mb-3 text-3xl font-semibold">
           {t("content.not_found_title")}
         </h2>
         <p className="mb-6 text-xl">
@@ -29,13 +29,13 @@ const NotFound = () => {
             i18nKey="content.not_found_redirect"
             values={{ seconds }}
             components={{
-              time: <span className="font-semibold text-secondary-600" />,
+              time: <span className="text-secondary-600 font-semibold" />,
             }}
           />
         </p>
         <Link
           to="/"
-          className="text-md underline decoration-icon underline-offset-2 hover:decoration-secondary-400"
+          className="text-md decoration-icon hover:decoration-secondary-400 underline underline-offset-2"
         >
           {t("content.not_found_link")}
         </Link>

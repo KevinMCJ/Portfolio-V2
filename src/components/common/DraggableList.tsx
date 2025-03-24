@@ -76,8 +76,10 @@ const DraggableList = ({
     };
   }, [isDragging, startX, scrollLeft]);
 
-  const defaultContainerClass = "invisible-scroll flex items-center gap-2 overflow-x-auto rounded-lg p-1";
-  const defaultItemClass = "flex-shrink-0 whitespace-nowrap rounded-sm bg-project-secondary px-2 py-0.5 text-sm font-semibold shadow-sm dark:text-black/90";
+  const defaultContainerClass =
+    "invisible-scroll flex items-center gap-2 overflow-x-auto";
+  const defaultItemClass =
+    "shrink-0 whitespace-nowrap rounded-xs bg-project-secondary text-secondary-900 px-2 py-0.5 text-sm font-semibold shadow-xs dark:text-black/90";
 
   return (
     <div

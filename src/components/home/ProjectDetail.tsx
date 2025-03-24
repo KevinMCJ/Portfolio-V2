@@ -46,29 +46,29 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
       animate={{ scale: 1 }}
       transition={{ duration: 0.3 }}
       ref={detailRef}
-      className="vstack size-[95%] max-w-[800px] gap-5 overflow-hidden rounded-lg bg-primary-500 p-3 dark:text-primary-100 md:max-h-[1080px] md:p-5"
+      className="vstack bg-primary-500 dark:text-primary-100 m-auto size-[95%] max-w-[800px] gap-5 overflow-hidden rounded-lg p-3 md:max-h-[1080px] md:p-5"
     >
       <button
-        className="absolute right-0 top-0"
+        className="absolute top-0 right-0"
         onClick={() => setIsOpen(false)}
       >
-        <FaWindowClose className="size-8 text-secondary-600" />
+        <FaWindowClose className="text-secondary-600 size-8" />
       </button>
-      <h2 className="text-center text-3xl font-bold text-secondary-800 dark:text-primary-400">
+      <h2 className="text-secondary-800 dark:text-primary-400 text-center text-3xl font-bold">
         {project.title[currentLanguage]}
       </h2>
       <div className="grid gap-2 sm:grid-cols-2 sm:gap-4 md:gap-6">
         <img
           src={project.thumbnail}
-          className="max-h-[180px] w-full rounded-sm object-cover"
+          className="max-h-[180px] w-full rounded-xs object-cover"
         />
-        <div className="vstack">
+        <div className="vstack gap-1">
           <div className="align mb-2 flex-wrap gap-2">
             {Array.isArray(project.tags[currentLanguage])
               ? project.tags[currentLanguage].map((tag, index) => (
                   <span
                     key={index}
-                    className="rounded-md border border-secondary-500 px-2 py-1 text-sm font-semibold text-secondary-700 dark:border-primary-400 dark:text-primary-300"
+                    className="border-secondary-500 text-secondary-700 dark:border-primary-400 dark:text-primary-300 rounded-md border px-2 py-1 text-sm font-semibold"
                   >
                     {tag}
                   </span>
@@ -91,10 +91,10 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
             <Link
               to={project.external_link.url}
               target="_blank"
-              className="align gap-1 rounded-md bg-secondary-200 px-2 py-1 dark:bg-primary-700"
+              className="align bg-secondary-200 dark:bg-primary-700 gap-1 rounded-md px-2 py-1"
             >
               <FaLink className="text-icon" />
-              <span className="text-sm font-semibold uppercase text-secondary-900 dark:text-secondary-100">
+              <span className="text-secondary-900 dark:text-secondary-100 text-sm font-semibold uppercase">
                 {project.external_link.type}
               </span>
             </Link>
@@ -102,10 +102,10 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
               <Link
                 to={project.video.url}
                 target="_blank"
-                className="align gap-1 rounded-md bg-secondary-200 px-2 py-1 dark:bg-primary-700"
+                className="align bg-secondary-200 dark:bg-primary-700 gap-1 rounded-md px-2 py-1"
               >
                 <FaVideo className="text-icon" />
-                <span className="text-sm font-semibold uppercase text-secondary-900 dark:text-secondary-100">
+                <span className="text-secondary-900 dark:text-secondary-100 text-sm font-semibold uppercase">
                   video
                 </span>
               </Link>
@@ -115,7 +115,7 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
       </div>
 
       <div className="max-h-full grow overflow-y-auto">
-        <h3 className="text-center text-xl font-bold uppercase text-secondary-700 dark:text-primary-300">
+        <h3 className="text-secondary-700 dark:text-primary-300 text-center text-xl font-bold uppercase">
           {t("content.project_detail_info_title")}
         </h3>
         <div
@@ -128,13 +128,13 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
         />
       </div>
 
-      <div>
-        <h3 className="font-semibold text-secondary-700 dark:text-primary-300">
+      <div className="vstack gap-2">
+        <h3 className="text-secondary-700 dark:text-primary-300 font-semibold">
           {t("content.project_detail_tech_title")}
         </h3>
         <DraggableList
           items={project.technologies}
-          itemClassName="w-fit text-nowrap shadow-md shadow-secondary-200 dark:shadow-secondary-800"
+          itemClassName="w-fit text-nowrap shadow-md shadow-secondary-200 p-1 dark:shadow-secondary-800"
         />
       </div>
     </motion.dialog>

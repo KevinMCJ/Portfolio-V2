@@ -34,7 +34,7 @@ const ExperienceSection = () => {
       <div className="center relative mx-auto flex-col gap-12 md:w-[90%]">
         <motion.div
           ref={lineRef}
-          className="absolute left-1/2 top-6 z-0 h-full w-1 -translate-x-1/2 transform rounded-md bg-secondary-400 dark:bg-primary-400"
+          className="bg-secondary-400 dark:bg-primary-400 absolute top-6 left-1/2 z-0 h-full w-1.5 -translate-x-1/2 transform rounded-md"
           initial="hidden"
           animate={isLineInView ? "visible" : "hidden"}
           variants={lineVariants}

@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="grid h-[calc(100dvh-5rem)] max-h-[900px] min-h-[600px] place-content-center items-center justify-items-center gap-10 app-container md:grid-cols-2 md:justify-items-start">
+    <section className="app-container grid h-[calc(100dvh-5rem)] max-h-[900px] min-h-[600px] place-content-center items-center justify-items-center gap-10 md:grid-cols-2 md:justify-items-start">
       <div className="md:5 max-w-[600px] text-center md:text-start">
         <span className="text-xl">
           <Trans
@@ -16,19 +16,19 @@ const HeroSection = () => {
             components={{ colored: <span className="text-accent" /> }}
           />
         </span>
-        <h2 className="text-balance text-4xl font-bold">
+        <h2 className="text-4xl font-bold text-balance">
           <Trans
             i18nKey="content.hero_role"
             components={{ colored: <span className="text-accent" /> }}
           />
         </h2>
-        <p className="mb-8 mt-2 text-balance text-lg">
+        <p className="mt-2 mb-8 text-lg text-balance">
           {t("content.hero_paragraph")}
         </p>
         <a
           href="/src/assets/curriculums/spanish-resume.pdf"
           download
-          className="btn inline-flex items-center gap-2"
+          className="btn text-primary-50 inline-flex items-center gap-2"
         >
           {t("content.hero_download_resume")}
           <HiOutlineDownload className="size-6" />
@@ -54,6 +54,9 @@ const HeroSection = () => {
         src={programmer}
         alt={t("content.hero_img_alt")}
         className="w-full max-w-[400px] scale-100 md:max-w-[800px]"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
       />
     </section>
   );

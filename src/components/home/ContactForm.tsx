@@ -102,7 +102,7 @@ const ContactForm = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <input
-            className={`${errors.name && touched.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon disabled:opacity-60 dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+            className={`${errors.name && touched.name ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500 disabled:opacity-60"} placeholder:text-secondary-800/80 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70 w-full rounded-xs border-b-4 p-2 placeholder:capitalize focus:outline-hidden`}
             type="text"
             name="name"
             placeholder={t("common.name")}
@@ -117,7 +117,7 @@ const ContactForm = () => {
         </div>
         <div>
           <input
-            className={`${errors.email && touched.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+            className={`${errors.email && touched.email ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} placeholder:text-secondary-800/80 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70 w-full rounded-xs border-b-4 p-2 placeholder:capitalize focus:outline-hidden disabled:opacity-60`}
             type="text"
             name="email"
             placeholder={t("common.email")}
@@ -133,7 +133,7 @@ const ContactForm = () => {
       </div>
       <div>
         <textarea
-          className={`${errors.message && touched.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} w-full resize-none rounded-sm border-b-4 p-2 placeholder:capitalize placeholder:text-secondary-800/80 focus:outline-none disabled:opacity-60 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70`}
+          className={`${errors.message && touched.message ? "border-b-red-500" : "border-b-icon/40 focus:border-b-icon dark:border-b-secondary-500/40 dark:focus:border-b-secondary-500"} placeholder:text-secondary-800/80 dark:bg-primary-100 dark:text-primary-800 dark:placeholder:text-primary-800/70 w-full resize-none rounded-xs border-b-4 p-2 placeholder:capitalize focus:outline-hidden disabled:opacity-60`}
           name="message"
           rows={8}
           placeholder={t("common.message")}
@@ -163,7 +163,7 @@ const ContactForm = () => {
         )}
         <button
           type="submit"
-          className="flex max-w-fit cursor-pointer items-center gap-2 rounded-md bg-icon px-4 py-2 capitalize text-primary-50 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-800 min-[840px]:order-1"
+          className="bg-icon text-primary-50 dark:bg-primary-800 flex max-w-fit cursor-pointer items-center gap-2 rounded-md px-4 py-2 capitalize disabled:cursor-not-allowed disabled:opacity-60 min-[840px]:order-1"
           disabled={Object.keys(errors).length > 0 || isSubmitting}
         >
           {isSubmitting ? (

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { ReactElement, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { IoIosSchool } from "react-icons/io";
@@ -12,7 +12,7 @@ interface TimeLineEventProps {
   index: number;
 }
 
-const icon: Record<ExperienceType, JSX.Element> = {
+const icon: Record<ExperienceType, ReactElement> = {
   study: <IoIosSchool className="size-full" />,
   work: <MdWork className="size-full" />,
   unknown: <BsQuestion className="size-full" />,
@@ -62,32 +62,32 @@ const TimelineEvent = ({ item, isEven, index }: TimeLineEventProps) => {
     >
       <motion.div
         variants={iconVariants}
-        className="center size-16 min-w-fit rounded-full border-4 border-secondary-400 bg-secondary-200 p-3 text-icon shadow-md dark:border-primary-400 dark:bg-primary-500 dark:text-primary-400 lg:absolute lg:order-2 lg:self-start"
+        className="center border-secondary-400 bg-secondary-200 text-icon dark:shadow-primary-700 dark:border-primary-400 dark:bg-primary-500 dark:text-primary-400 size-16 min-w-fit rounded-full border-4 p-3 shadow-md lg:absolute lg:order-2 lg:self-start"
       >
         {icon[item.type]}
       </motion.div>
 
       <motion.span
         variants={contentVariants}
-        className={`${isEven ? "lg:order-1" : "lg:order-3"} my-5 bg-primary-500 text-center text-lg font-semibold uppercase lg:order-1 lg:flex-1 lg:self-start`}
+        className={`${isEven ? "lg:order-1" : "lg:order-3"} bg-primary-500 my-5 text-center text-lg font-semibold uppercase lg:order-1 lg:flex-1 lg:self-start`}
       >{`${formatDate(item.unix_timestamp.from)} - ${formatDate(item.unix_timestamp.to) || t("common.always")}`}</motion.span>
 
       <motion.div
         variants={contentVariants}
         className={`${isEven ? "lg:order-3 lg:items-start" : "lg:order-1 lg:items-end"} w-full lg:flex-1`}
       >
-        <div className="relative mx-auto w-full max-w-[300px] space-y-2 rounded-md bg-secondary-200 p-4 dark:bg-primary-700 md:w-full md:max-w-[600px]">
+        <div className="bg-secondary-200 dark:bg-primary-700 relative mx-auto w-full max-w-[300px] space-y-2 rounded-md p-4 md:w-full md:max-w-[600px]">
           <div
             className={`top-6 hidden size-0 border-[10px] border-transparent lg:absolute lg:block ${
               isEven
-                ? "-left-5 border-r-secondary-300 dark:border-r-primary-700"
-                : "-right-5 border-l-secondary-300 dark:border-l-primary-700"
+                ? "border-r-secondary-300 dark:border-r-primary-700 -left-5"
+                : "border-l-secondary-300 dark:border-l-primary-700 -right-5"
             }`}
           />
           <h2 className="text-center font-bold capitalize md:text-start">
             {item.company || t("common.self_taught")}
           </h2>
-          <p className="text-balance tracking-tight md:text-wrap md:tracking-normal">
+          <p className="tracking-tight text-balance md:tracking-normal md:text-wrap">
             {item.description[currentLanguage]}
           </p>
         </div>
