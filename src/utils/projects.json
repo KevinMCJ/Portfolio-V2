@@ -20,8 +20,7 @@
       "thumbnail": "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
       "images": [
         "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
-        "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
-        "/src/assets/projects/sportzone/sportzone_thumbnail.png"
+        "/src/assets/projects/fisiomfulness/fisiomfulness_message.webp"
       ],
       "external_link": {
         "type": "Demo",
@@ -45,6 +44,60 @@
         "MongoDB",
         "Mongoose",
         "Socket.IO",
+        "Zod",
+        "NextAuth",
+        "Formik",
+        "Cloudinary"
+      ]
+    },
+    {
+      "title": {
+        "es": "Chatfusion",
+        "en": "Chatfusion"
+      },
+      "unix_timestamp": {
+        "from": 1723432576
+      },
+      "description": {
+        "es": "Aplicación de chat en tiempo real inspirada en 'Telegram' y 'Discord'. Funcionando como una pequeña red social, las personas pueden registrarse para intercambiar conversaciones con los contactos que agregan, ya sea de manera individual o grupal. Es posible enviar fotos y videos, así como charlar a través de videollamadas, guardando un historial de mensajes y conversaciones fáciles de gestionar.",
+        "en": "Real-time chat application inspired by 'Telegram' and 'Discord'. Working like a small social network, users can register to exchange conversations with their contacts, either in a one-to-one chat or in a group. It's possible to send photos and videos, as well as chat via video calls, while keeping a history of messages and conversations that are easy to manage."
+      },
+      "html_description": {
+        "es": "<h2>Aplicación de Chat en tiempo real</h2> <h3>Realizado</h3> <ul> <li>Chats individuales y grupales</li> <li>Envío de multimedia (imágenes y videos)</li> <li>Solicitudes de amistad</li> <li>Mensajería instantánea e interacción optimista con la UI</li> <li>Autenticación con NextAuth</li> <li>Totalmente responsive</li> </ul> <h3>En progreso...</h3> <ul> <li>Llamadas (video o solo audio)</li> <li>Notificaciones</li> </ul>",
+        "en": "<h2>Chat application in real-time</h2> <h3>Completed</h3> <ul> <li>One-on-one and group chats</li> <li>Multimedia sharing (images and videos)</li> <li>Friend requests</li> <li>Instant messaging with optimistic UI interactions</li> <li>Authentication with NextAuth</li> <li>Fully responsive design</li> </ul> <h3>In progress...</h3> <ul> <li>Calls (video or audio)</li> <li>Notifications</li> </ul>"
+      },
+      "external_link": {
+        "type": "Repository",
+        "url": "https://github.com/KevinMCJ"
+      },
+      "video": {
+        "exists": false,
+        "url": ""
+      },
+      "thumbnail": "/src/assets/projects/chatfusion/chatfusion_thumbnail.webp",
+      "images": [
+        "/src/assets/projects/chatfusion/chatfusion_one_to_one.webp",
+        "/src/assets/projects/chatfusion/chatfusion_group.webp",
+        "/src/assets/projects/chatfusion/chatfusion_contacts.webp",
+        "/src/assets/projects/chatfusion/chatfusion_request.webp",
+        "/src/assets/projects/chatfusion/chatfusion_group-form.webp",
+        "/src/assets/projects/chatfusion/chatfusion_chat_mobile.webp"
+      ],
+      "tags": {
+        "en": ["Personal Project", "Full-stack"],
+        "es": ["Proyecto Personal", "Full-stack"]
+      },
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Next.js",
+        "TailwindCSS",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Sequelize",
+        "Socket.IO",
+        "ZegoCloud",
         "Zod",
         "NextAuth",
         "Formik",
@@ -77,11 +130,13 @@
         "exists": false,
         "url": ""
       },
-      "thumbnail": "/src/assets/projects/sportzone/sportzone_thumbnail.png",
+      "thumbnail": "/src/assets/projects/sportzone/sportzone_thumbnail.webp",
       "images": [
-        "/src/assets/projects/sportzone/sportzone_thumbnail.png",
-        "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
-        "/src/assets/projects/chatfusion/chatfusion_thumbnail.png"
+        "/src/assets/projects/sportzone/sportzone_catalogue.webp",
+        "/src/assets/projects/sportzone/sportzone_article.webp",
+        "/src/assets/projects/sportzone/sportzone_admin_1.webp",
+        "/src/assets/projects/sportzone/sportzone_admin_2.webp",
+        "/src/assets/projects/sportzone/sportzone_admin_3.webp"
       ],
       "tags": {
         "en": ["Academic", "Full-stack"],
@@ -99,57 +154,6 @@
         "MercadoPago",
         "Firebase",
         "Yup",
-        "Formik",
-        "Cloudinary"
-      ]
-    },
-    {
-      "title": {
-        "es": "Chatfusion",
-        "en": "Chatfusion"
-      },
-      "unix_timestamp": {
-        "from": 1723432576
-      },
-      "description": {
-        "es": "Aplicación de chat en tiempo real inspirada en 'Telegram' y 'Discord'. Funcionando como una pequeña red social, las personas pueden registrarse para intercambiar conversaciones con los contactos que agregan, ya sea de manera individual o grupal. Es posible enviar fotos y videos, así como charlar a través de videollamadas, guardando un historial de mensajes y conversaciones fáciles de gestionar.",
-        "en": "Real-time chat application inspired by 'Telegram' and 'Discord'. Working like a small social network, users can register to exchange conversations with their contacts, either in a one-to-one chat or in a group. It's possible to send photos and videos, as well as chat via video calls, while keeping a history of messages and conversations that are easy to manage."
-      },
-      "html_description": {
-        "es": "<h2>Aplicación de Chat en tiempo real</h2> <h3>Realizado</h3> <ul> <li>Chats individuales y grupales</li> <li>Envío de multimedia (imágenes y videos)</li> <li>Solicitudes de amistad</li> <li>Mensajería instantánea e interacción optimista con la UI</li> <li>Autenticación con NextAuth</li> <li>Totalmente responsive</li> </ul> <h3>En progreso...</h3> <ul> <li>Llamadas (video o solo audio)</li> <li>Notificaciones</li> </ul>",
-        "en": "<h2>Chat application in real-time</h2> <h3>Completed</h3> <ul> <li>One-on-one and group chats</li> <li>Multimedia sharing (images and videos)</li> <li>Friend requests</li> <li>Instant messaging with optimistic UI interactions</li> <li>Authentication with NextAuth</li> <li>Fully responsive design</li> </ul> <h3>In progress...</h3> <ul> <li>Calls (video or audio)</li> <li>Notifications</li> </ul>"
-      },
-      "external_link": {
-        "type": "Repository",
-        "url": "https://github.com/KevinMCJ"
-      },
-      "video": {
-        "exists": false,
-        "url": ""
-      },
-      "thumbnail": "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
-      "images": [
-        "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
-        "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
-        "/src/assets/projects/sportzone/sportzone_thumbnail.png"
-      ],
-      "tags": {
-        "en": ["Personal Project", "Full-stack"],
-        "es": ["Proyecto Personal", "Full-stack"]
-      },
-      "technologies": [
-        "JavaScript",
-        "React",
-        "Next.js",
-        "TailwindCSS",
-        "Node.js",
-        "Express.js",
-        "PostgreSQL",
-        "Sequelize",
-        "Socket.IO",
-        "ZegoCloud",
-        "Zod",
-        "NextAuth",
         "Formik",
         "Cloudinary"
       ]
@@ -181,9 +185,10 @@
       },
       "thumbnail": "/src/assets/projects/gamedex/gamedex_thumbnail.webp",
       "images": [
-        "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
-        "/src/assets/projects/chatfusion/chatfusion_thumbnail.png",
-        "/src/assets/projects/sportzone/sportzone_thumbnail.png"
+        "/src/assets/projects/gamedex/gamedex_welcome.webp",
+        "/src/assets/projects/gamedex/gamedex_search.webp",
+        "/src/assets/projects/gamedex/gamedex_detail.webp",
+        "/src/assets/projects/gamedex/gamedex_form.webp"
       ],
       "tags": {
         "en": ["Academic", "Frontend"],
