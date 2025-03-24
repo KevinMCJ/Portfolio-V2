@@ -91,7 +91,7 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
             <Link
               to={project.external_link.url}
               target="_blank"
-              className="align bg-secondary-200 dark:bg-primary-700 gap-1 rounded-md px-2 py-1"
+              className="align btn-secondary gap-1 rounded-sm  px-2 py-1"
             >
               <FaLink className="text-icon" />
               <span className="text-secondary-900 dark:text-secondary-100 text-sm font-semibold uppercase">
@@ -102,7 +102,7 @@ const ProjectDetail = ({ isOpen, setIsOpen, project }: ProjectDetailProps) => {
               <Link
                 to={project.video.url}
                 target="_blank"
-                className="align bg-secondary-200 dark:bg-primary-700 gap-1 rounded-md px-2 py-1"
+                className="align btn-secondary gap-1 rounded-sm  px-2 py-1"
               >
                 <FaVideo className="text-icon" />
                 <span className="text-secondary-900 dark:text-secondary-100 text-sm font-semibold uppercase">

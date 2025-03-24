@@ -51,8 +51,8 @@ const ImageSlider = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
-      <div className="relative flex h-full max-h-[1080px] w-full max-w-[1920px] flex-col items-center justify-center gap-2">
-        <div className="relative mx-auto flex h-[250px] w-full max-w-[1200px] items-center justify-center md:size-[80%]">
+      <div className="relative flex h-full max-h-[1080px] w-full max-w-[1920px] flex-col items-center justify-center gap-4">
+        <div className="relative mx-auto flex w-full h-[50%] max-w-[1200px] items-center justify-center md:size-[80%]">
           {!isCurrentImageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-transparent">
               <div className="border-icon h-10 w-10 animate-spin rounded-full border-4 border-t-transparent"></div>

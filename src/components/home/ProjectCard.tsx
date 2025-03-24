@@ -42,14 +42,14 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
             <Link
               to={project.external_link.url}
               target="_blank"
-              className="bg-project-secondary btn dark:bg-primary-800 flex items-center gap-2 px-2 py-1 font-semibold shadow-xs md:rounded-md"
+              className="btn-secondary flex items-center gap-2 md:rounded-md px-2 py-1 font-semibold"
             >
               <span>{project.external_link.type}</span>
               <FaExternalLinkAlt className="text-icon" />
             </Link>
             <button
               onClick={() => setIsDetailOpen(true)}
-              className="bg-project-secondary btn dark:bg-primary-800 flex items-center gap-2 px-2 py-1 font-semibold md:rounded-md"
+              className="btn-secondary flex items-center gap-2 md:rounded-md px-2 py-1 font-semibold"
             >
               <span>{t("content.project_see_more")}</span>
               <FaInfoCircle className="text-icon" />

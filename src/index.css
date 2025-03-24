@@ -141,11 +141,15 @@
 }
 
 @utility btn {
-  @apply bg-accent cursor-pointer rounded-xl px-4 py-3 font-semibold text-inherit hover:shadow-lg hover:brightness-110;
+  @apply bg-accent cursor-pointer rounded-xl px-4 py-3 font-semibold text-inherit hover:shadow-lg hover:brightness-105;
+}
+
+@utility btn-secondary {
+  @apply bg-project-secondary text-secondary-900 dark:bg-primary-800 dark:text-primary-50 cursor-pointer px-4 py-2 font-semibold hover:brightness-105 shadow-inherit shadow-md;
 }
 
 @utility social-btn {
-  @apply bg-secondary-500 shadow-primary-600 size-14 rounded-full p-3 text-white shadow-[0px_0px_8px];
+  @apply bg-secondary-500 shadow-primary-600 size-14 rounded-full p-3 text-white shadow-[0px_0px_8px] hover:brightness-105;
 }
 
 @utility photo_container {
