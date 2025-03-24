@@ -2,7 +2,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
-import programmer from "@/assets/hero-programmer.png";
+import programmer from "@/assets/hero-programmer.webp";
 
 const HeroSection = () => {
   const { t } = useTranslation();
