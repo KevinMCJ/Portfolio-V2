@@ -158,7 +158,7 @@
 }
 
 @utility section-title {
-  @apply shadow-primary-700 dark:shadow-primary-900 mt-5 mb-8 text-center text-3xl font-semibold tracking-wider uppercase [text-shadow:_0_6px_20px_var(--tw-shadow-color)] dark:[text-shadow:_0_6px_15px_var(--tw-shadow-color)];
+  @apply shadow-secondary-400 dark:shadow-primary-900 mt-5 mb-8 text-center text-3xl font-semibold tracking-wider uppercase [text-shadow:_0_0px_2px_var(--tw-shadow-color)] dark:[text-shadow:_0_2px_15px_var(--tw-shadow-color)];
 }
 
 @utility section-max-h {

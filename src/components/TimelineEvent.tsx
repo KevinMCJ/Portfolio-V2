@@ -67,10 +67,16 @@ const TimelineEvent = ({ item, isEven, index }: TimeLineEventProps) => {
         {icon[item.type]}
       </motion.div>
 
-      <motion.span
+      <motion.div
         variants={contentVariants}
-        className={`${isEven ? "lg:order-1" : "lg:order-3"} bg-primary-500 my-5 text-center text-lg font-semibold uppercase lg:order-1 lg:flex-1 lg:self-start`}
-      >{`${formatDate(item.unix_timestamp.from)} - ${formatDate(item.unix_timestamp.to) || t("common.always")}`}</motion.span>
+        className={`${isEven ? "lg:order-1" : "lg:order-3"} text-secondary-800 dark:text-primary-100 my-5 flex w-[21ch] justify-between gap-5 text-center text-lg font-semibold [text-shadow:_0px_1px_1px_var(--color-primary-400)] dark:[text-shadow:_0px_0px_4px_black] uppercase lg:order-1 lg:flex-1 lg:justify-center lg:gap-3 lg:self-start`}
+      >
+        <motion.span>{formatDate(item.unix_timestamp.from)}</motion.span>
+        <motion.span className="hidden lg:block">-</motion.span>
+        <motion.span>
+          {formatDate(item.unix_timestamp.to) || t("common.always")}
+        </motion.span>
+      </motion.div>
 
       <motion.div
         variants={contentVariants}
