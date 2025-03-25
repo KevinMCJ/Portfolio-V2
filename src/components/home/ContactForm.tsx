@@ -37,11 +37,7 @@ const ContactForm = () => {
 
     // * Validate field only if was touched
     if (touched[name as keyof ContactData]) {
-      const fieldToValidate = { ...data, [name]: value };
-      setErrors((prev) => ({
-        ...prev,
-        ...contactValidator(fieldToValidate),
-      }));
+      setErrors(contactValidator(newData));
     }
   };
 
@@ -53,12 +49,7 @@ const ContactForm = () => {
       ...prev,
       [name]: true,
     }));
-
-    const fieldToValidate = { ...data };
-    setErrors((prev) => ({
-      ...prev,
-      ...contactValidator(fieldToValidate),
-    }));
+    setErrors(contactValidator(data));
   };
 
   const handleSubmit = async (e: FormEvent) => {
