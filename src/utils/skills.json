@@ -5,39 +5,39 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "/src/assets/tech-icons/html.svg"
+          "icon": "/tech-icons/html.svg"
         },
         {
           "name": "CSS",
-          "icon": "/src/assets/tech-icons/css.svg"
+          "icon": "/tech-icons/css.svg"
         },
         {
           "name": "JavaScript",
-          "icon": "/src/assets/tech-icons/javascript.svg"
+          "icon": "/tech-icons/javascript.svg"
         },
         {
           "name": "React",
-          "icon": "/src/assets/tech-icons/react.svg"
+          "icon": "/tech-icons/react.svg"
         },
         {
           "name": "React-Router",
-          "icon": "/src/assets/tech-icons/react-router.svg"
+          "icon": "/tech-icons/react-router.svg"
         },
         {
           "name": "TailwindCSS",
-          "icon": "/src/assets/tech-icons/tailwind-css.svg"
+          "icon": "/tech-icons/tailwind-css.svg"
         },
         {
           "name": "Redux",
-          "icon": "/src/assets/tech-icons/redux.svg"
+          "icon": "/tech-icons/redux.svg"
         },
         {
           "name": "Next.js",
-          "icon": "/src/assets/tech-icons/nextjs.svg"
+          "icon": "/tech-icons/nextjs.svg"
         },
         {
           "name": "NextAuth",
-          "icon": "/src/assets/tech-icons/nextauth.png"
+          "icon": "/tech-icons/nextauth.png"
         }
       ]
     },
@@ -46,31 +46,31 @@
       "technologies": [
         {
           "name": "Node.js",
-          "icon": "/src/assets/tech-icons/nodejs.svg"
+          "icon": "/tech-icons/nodejs.svg"
         },
         {
           "name": "Express",
-          "icon": "/src/assets/tech-icons/express-js.svg"
+          "icon": "/tech-icons/express-js.svg"
         },
         {
           "name": "PostgreSQL",
-          "icon": "/src/assets/tech-icons/postgresql.svg"
+          "icon": "/tech-icons/postgresql.svg"
         },
         {
           "name": "MongoDB",
-          "icon": "/src/assets/tech-icons/mongodb.svg"
+          "icon": "/tech-icons/mongodb.svg"
         },
         {
           "name": "Sequelize",
-          "icon": "/src/assets/tech-icons/sequelize.svg"
+          "icon": "/tech-icons/sequelize.svg"
         },
         {
           "name": "Mongoose",
-          "icon": "/src/assets/tech-icons/mongoose.svg"
+          "icon": "/tech-icons/mongoose.svg"
         },
         {
           "name": "Socket.IO",
-          "icon": "/src/assets/tech-icons/socketio.png"
+          "icon": "/tech-icons/socketio.png"
         }
       ]
     },
@@ -82,7 +82,7 @@
       "technologies": [
         {
           "name": "Typescript",
-          "icon": "/src/assets/tech-icons/typescript.svg"
+          "icon": "/tech-icons/typescript.svg"
         }
       ]
     },
@@ -94,31 +94,31 @@
       "technologies": [
         {
           "name": "Git",
-          "icon": "/src/assets/tech-icons/git.svg"
+          "icon": "/tech-icons/git.svg"
         },
         {
           "name": "Github",
-          "icon": "/src/assets/tech-icons/github.svg"
+          "icon": "/tech-icons/github.svg"
         },
         {
           "name": "Postman",
-          "icon": "/src/assets/tech-icons/postman-api.svg"
+          "icon": "/tech-icons/postman-api.svg"
         },
         {
           "name": "VSCODE",
-          "icon": "/src/assets/tech-icons/visual-studio-code.svg"
+          "icon": "/tech-icons/visual-studio-code.svg"
         },
         {
           "name": "NPM",
-          "icon": "/src/assets/tech-icons/npm.svg"
+          "icon": "/tech-icons/npm.svg"
         },
         {
           "name": "Trello",
-          "icon": "/src/assets/tech-icons/trello.svg"
+          "icon": "/tech-icons/trello.svg"
         },
         {
           "name": "Slack",
-          "icon": "/src/assets/tech-icons/slack.svg"
+          "icon": "/tech-icons/slack.svg"
         }
       ]
     }

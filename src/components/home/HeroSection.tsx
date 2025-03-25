@@ -2,7 +2,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
-import programmer from "@/assets/hero-programmer.webp";
+import programmer from "/hero-programmer.webp";
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -26,7 +26,7 @@ const HeroSection = () => {
           {t("content.hero_paragraph")}
         </p>
         <a
-          href="/src/assets/curriculums/spanish-resume.pdf"
+          href="/curriculums/Kevin_Mamani_Spanish_CV.pdf"
           download
           className="btn text-primary-50 inline-flex items-center gap-2"
         >

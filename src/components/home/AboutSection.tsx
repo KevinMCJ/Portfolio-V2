@@ -1,5 +1,4 @@
 import { Trans, useTranslation } from "react-i18next";
-import programmer from "@/assets/me.webp";
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -11,7 +10,7 @@ const AboutSection = () => {
         <div className="photo_container mx-auto lg:min-w-[320px]">
           <img
             className="w-full max-w-[400px]"
-            src={programmer}
+            src="/me.webp"
             alt="Kevin Mamani photo"
           />
         </div>

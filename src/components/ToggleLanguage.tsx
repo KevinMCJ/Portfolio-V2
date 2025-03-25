@@ -1,7 +1,7 @@
 import { SupportedLanguage } from "@/global/types";
 import i18next from "i18next";
-import SpainFlag from "@assets/spain.svg?react";
-import UnitedKingdomFlag from "@assets/united-kingdom.svg?react";
+import SpainFlag from "@/assets/spain.svg?react";
+import UnitedKingdomFlag from "@/assets/united-kingdom.svg?react";
 
 const ToggleLanguage = () => {
   const currentLanguage = i18next.language as SupportedLanguage;

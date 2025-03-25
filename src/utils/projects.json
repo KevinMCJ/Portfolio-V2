@@ -17,10 +17,10 @@
         "es": "<h3>Tareas que llevé a cabo</h3> <h4>Backend</h4> <ul> <li>Diseño y CRUDs de diferentes entidades (MongoDB/Mongoose)</li> <li>Autenticación basada en cookies con JWT</li> <li>Desarrollo de middlewares: Autorización por roles, Validación de datos con ZOD, Subida de archivos a Cloudinary</li> <li>Manejo de errores personalizado</li> </ul> <h4>Frontend</h4> <ul> <li>Sección de blogs: Detalle, Formulario de creación/edición, Mis blogs, Comentarios</li> <li>Servicios de Profesional: Formulario de creación/edición, Mis servicios, Botón WhatsApp</li> <li>Sección 'Pregunta a un experto': Formulario de pregunta y respuesta, Moderación</li> <li>Formulario de inicio de sesión / registro (profesional/usuario)</li> <li>Vista 'Editar perfil': Campos por rol (profesional/usuario), Verificación de contraseña para datos sensibles, Actualización de sesión con NextAuth</li> <li>Detalle de profesional: Ratings, Turnos, Experiencia</li> <li>Protección de rutas basada en roles con NextAuth</li> <li>Vistas responsivas siguiendo el enfoque mobile-first, aportando al diseño de Figma</li> </ul>",
         "en": "<h3>Tasks I completed</h3> <h4>Backend</h4> <ul> <li>Design and CRUDs for various entities (MongoDB/Mongoose)</li> <li>Cookie-based authentication with JWT</li> <li>Middleware development: Role-based authorization, Data validation with ZOD, File uploads to Cloudinary</li> <li>Custom error handling</li> </ul> <h4>Frontend</h4> <ul> <li>Blog section: Detail, Creation/edit form, My blogs, Comments</li> <li>Professional services: Creation/edit form, My services, WhatsApp button</li> <li>'Ask an expert' section: Question and answer form, Moderation</li> <li>Login/registration form (professional/user)</li> <li>Edit profile view: Role-based fields (professional/user), Password verification for sensitive data, Session update with NextAuth</li> <li>Professional detail: Ratings, Appointments, Experience</li> <li>Role-based route protection with NextAuth</li> <li>Fully responsive design following a mobile-first approach, contributing to Figma design</li> </ul>"
       },
-      "thumbnail": "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
+      "thumbnail": "/projects/fisiomfulness/fisiom_thumbnail.webp",
       "images": [
-        "/src/assets/projects/fisiomfulness/fisiom_thumbnail.webp",
-        "/src/assets/projects/fisiomfulness/fisiomfulness_message.webp"
+        "/projects/fisiomfulness/fisiom_thumbnail.webp",
+        "/projects/fisiomfulness/fisiomfulness_message.webp"
       ],
       "external_link": {
         "type": "Demo",
@@ -74,14 +74,14 @@
         "exists": false,
         "url": ""
       },
-      "thumbnail": "/src/assets/projects/chatfusion/chatfusion_thumbnail.webp",
+      "thumbnail": "/projects/chatfusion/chatfusion_thumbnail.webp",
       "images": [
-        "/src/assets/projects/chatfusion/chatfusion_one_to_one.webp",
-        "/src/assets/projects/chatfusion/chatfusion_group.webp",
-        "/src/assets/projects/chatfusion/chatfusion_contacts.webp",
-        "/src/assets/projects/chatfusion/chatfusion_request.webp",
-        "/src/assets/projects/chatfusion/chatfusion_group-form.webp",
-        "/src/assets/projects/chatfusion/chatfusion_chat_mobile.webp"
+        "/projects/chatfusion/chatfusion_one_to_one.webp",
+        "/projects/chatfusion/chatfusion_group.webp",
+        "/projects/chatfusion/chatfusion_contacts.webp",
+        "/projects/chatfusion/chatfusion_request.webp",
+        "/projects/chatfusion/chatfusion_group-form.webp",
+        "/projects/chatfusion/chatfusion_chat_mobile.webp"
       ],
       "tags": {
         "en": ["Personal Project", "Full-stack"],
@@ -130,13 +130,13 @@
         "exists": false,
         "url": ""
       },
-      "thumbnail": "/src/assets/projects/sportzone/sportzone_thumbnail.webp",
+      "thumbnail": "/projects/sportzone/sportzone_thumbnail.webp",
       "images": [
-        "/src/assets/projects/sportzone/sportzone_catalogue.webp",
-        "/src/assets/projects/sportzone/sportzone_article.webp",
-        "/src/assets/projects/sportzone/sportzone_admin_1.webp",
-        "/src/assets/projects/sportzone/sportzone_admin_2.webp",
-        "/src/assets/projects/sportzone/sportzone_admin_3.webp"
+        "/projects/sportzone/sportzone_catalogue.webp",
+        "/projects/sportzone/sportzone_article.webp",
+        "/projects/sportzone/sportzone_admin_1.webp",
+        "/projects/sportzone/sportzone_admin_2.webp",
+        "/projects/sportzone/sportzone_admin_3.webp"
       ],
       "tags": {
         "en": ["Academic", "Full-stack"],
@@ -183,12 +183,12 @@
         "exists": false,
         "url": ""
       },
-      "thumbnail": "/src/assets/projects/gamedex/gamedex_thumbnail.webp",
+      "thumbnail": "/projects/gamedex/gamedex_thumbnail.webp",
       "images": [
-        "/src/assets/projects/gamedex/gamedex_welcome.webp",
-        "/src/assets/projects/gamedex/gamedex_search.webp",
-        "/src/assets/projects/gamedex/gamedex_detail.webp",
-        "/src/assets/projects/gamedex/gamedex_form.webp"
+        "/projects/gamedex/gamedex_welcome.webp",
+        "/projects/gamedex/gamedex_search.webp",
+        "/projects/gamedex/gamedex_detail.webp",
+        "/projects/gamedex/gamedex_form.webp"
       ],
       "tags": {
         "en": ["Academic", "Frontend"],
