@@ -27,6 +27,19 @@
       }
     },
     {
+      "company": "Byron Solutions",
+      "role": "Desarrollador Frontend",
+      "type": "work",
+      "unix_timestamp": {
+        "from": 1744027200,
+        "to": null
+      },
+      "description": {
+        "es": "Como desarrollador frontend, participo en la construcción de \"OrdenApp\", una aplicación moderna que agiliza la experiencia gastronómica. Me encargo de implementar interfaces intuitivas y funcionalidades clave que optimizan la gestión operativa de restaurantes, bares y cafeterías.",
+        "en": "As a frontend developer, I take part in building \"OrdenApp\", a modern application that simplifies the dining experience. I’m responsible for developing intuitive interfaces and key features that enhance the operational management of restaurants, bars, and cafés."
+      }
+    },
+    {
       "company": "",
       "role": "test role 3",
       "type": "unknown",
