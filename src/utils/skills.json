@@ -83,6 +83,14 @@
         {
           "name": "Typescript",
           "icon": "/tech-icons/typescript.svg"
+        },
+        {
+          "name": "Material UI",
+          "icon": "/tech-icons/material-ui.svg"
+        },
+        {
+          "name": "Recharts",
+          "icon": "/tech-icons/chart.svg"
         }
       ]
     },
