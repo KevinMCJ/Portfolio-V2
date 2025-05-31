@@ -42,15 +42,15 @@ const TimelineEvent = ({ item, isEven, index }: TimeLineEventProps) => {
       opacity: 1,
       transition: {
         duration,
-        delay: index * 0.2 + extraDelay,
+        delay: index * 0.1 + extraDelay,
         ease: "easeOut",
       },
     },
   });
 
-  const containerVariants = createFadeInVariants(0.5);
+  const containerVariants = createFadeInVariants(0.4);
   const iconVariants = createFadeInVariants(0.3, 0.1);
-  const contentVariants = createFadeInVariants(0.4, 0.2);
+  const contentVariants = createFadeInVariants(0.3, 0.2);
 
   return (
     <motion.article
