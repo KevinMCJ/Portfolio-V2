@@ -25,16 +25,22 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
       />
       <article className="from-project-primary text-project-text grid h-max max-h-[680px] w-full max-w-[400px] overflow-hidden bg-gradient-to-br p-2 shadow-md md:h-[450px] md:max-w-[950px] md:grid-cols-[45%_auto] md:grid-rows-[85%_auto] md:gap-x-5 md:p-3">
         <div className="vstack relative">
-          <div
-            className="relative overflow-hidden md:rounded-lg"
-            onClick={() => openSlider(project.images)}
-          >
+          <div className="relative overflow-hidden md:rounded-lg">
             <img
               src={project.thumbnail}
               alt={`${project.title[currentLanguage]} thumbnail`}
               className="h-[200px] w-full object-cover sm:max-h-none md:h-[300px]"
             />
-            <div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 hover:opacity-100">
+            <div
+              onClick={() => {
+                if (project.images.length > 0) {
+                  openSlider(project.images);
+                } else {
+                  window.open(project.external_link.url, "_blank");
+                }
+              }}
+              className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 hover:opacity-100"
+            >
               <FaRegEye className="text-3xl text-white" />
             </div>
           </div>
@@ -42,14 +48,14 @@ const ProjectCard = ({ project, openSlider }: ProjectCardsProps) => {
             <Link
               to={project.external_link.url}
               target="_blank"
-              className="btn-secondary flex items-center gap-2 md:rounded-md px-2 py-1 font-semibold"
+              className="btn-secondary flex items-center gap-2 px-2 py-1 font-semibold md:rounded-md"
             >
               <span>{project.external_link.type}</span>
               <FaExternalLinkAlt className="text-icon" />
             </Link>
             <button
               onClick={() => setIsDetailOpen(true)}
-              className="btn-secondary flex items-center gap-2 md:rounded-md px-2 py-1 font-semibold"
+              className="btn-secondary flex items-center gap-2 px-2 py-1 font-semibold md:rounded-md"
             >
               <span>{t("content.project_see_more")}</span>
               <FaInfoCircle className="text-icon" />
