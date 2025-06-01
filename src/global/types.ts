@@ -31,7 +31,7 @@ export interface Experience {
   company: string;
   role?: string;
   type: ExperienceType;
-  unix_timestamp: { from: number; to?: number };
+  unix_timestamp: { from: number; to?: number | null };
   description: { [key in SupportedLanguage]: string };
 }
 

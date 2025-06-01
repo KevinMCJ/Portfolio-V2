@@ -18,6 +18,7 @@ export const validateExperience = (item: any): item is Experience => {
     typeof item.unix_timestamp !== "object" ||
     typeof item.unix_timestamp.from !== "number" ||
     (item.unix_timestamp.to !== undefined &&
+      item.unix_timestamp.to !== null &&
       typeof item.unix_timestamp.to !== "number")
   ) {
     return false;
