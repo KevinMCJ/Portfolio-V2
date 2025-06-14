@@ -145,7 +145,7 @@
 }
 
 @utility btn-secondary {
-  @apply bg-project-secondary text-secondary-900 dark:bg-primary-800 dark:text-primary-50 cursor-pointer px-4 py-2 font-semibold hover:brightness-105 shadow-inherit shadow-md;
+  @apply bg-project-secondary text-secondary-900 dark:bg-primary-800 dark:text-primary-50 cursor-pointer px-4 py-2 font-semibold shadow-md shadow-inherit hover:brightness-105;
 }
 
 @utility social-btn {

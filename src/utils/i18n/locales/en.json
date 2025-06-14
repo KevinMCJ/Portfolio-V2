@@ -24,7 +24,7 @@
     "not_found_title": "Page Not Found",
     "not_found_redirect": "You will be redirected to the homepage in {{seconds}}",
     "not_found_link": "Click here to go immediately",
-    "v_projects_provisional": "More projects coming soon!"
+    "more_projects_title": "More projects"
   },
   "common": {
     "from": "From",
