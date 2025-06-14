@@ -11,7 +11,8 @@ import {
 export type NavItem = {
   icon: ReactNode;
   i18n_key: string;
-  href: string;
+  path: string;
+  hash?: string;
 };
 
 export const navItemsByPath: Record<string, NavItem[]> = {
@@ -19,34 +20,39 @@ export const navItemsByPath: Record<string, NavItem[]> = {
     {
       icon: <FaLightbulb />,
       i18n_key: "content.nav_skills",
-      href: "#skills",
+      path: "/",
+      hash: "#skills",
     },
     {
       icon: <FaLaptopCode />,
       i18n_key: "content.nav_projects",
-      href: "#projects",
+      path: "/",
+      hash: "#projects",
     },
     {
       icon: <FaBriefcase />,
       i18n_key: "content.nav_experience",
-      href: "#experience",
+      path: "/",
+      hash: "#experience",
     },
     {
       icon: <FaUser />,
       i18n_key: "content.nav_about",
-      href: "#about",
+      path: "/",
+      hash: "#about",
     },
     {
       icon: <FaEnvelope />,
       i18n_key: "content.nav_contact",
-      href: "#contact",
+      path: "/",
+      hash: "#contact",
     },
   ],
   "*": [
     {
       icon: <FaHome />,
       i18n_key: "content.nav_home",
-      href: "/",
+      path: "/",
     },
   ],
 };
@@ -56,6 +62,6 @@ export const defaultNavItems: NavItem[] = [
   {
     icon: <FaHome />,
     i18n_key: "content.nav_home",
-    href: "/",
+    path: "/",
   },
 ];

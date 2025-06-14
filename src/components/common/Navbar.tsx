@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { navItemsByPath, defaultNavItems } from "@/config/navItems";
+import { navItemsByPath, defaultNavItems, NavItem } from "@/config/navItems";
 import ToggleLanguage from "@/components/ToggleLanguage";
 
 const widthForItemsToFit = 1100; // ? Matches with tailwind "navbar-break"
@@ -11,14 +11,18 @@ const widthForItemsToFit = 1100; // ? Matches with tailwind "navbar-break"
 const Navbar = () => {
   const { t } = useTranslation();
   const { pathname } = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth > widthForItemsToFit);
+  const [isMenuOpen, setIsMenuOpen] = useState(
+    window.innerWidth > widthForItemsToFit,
+  );
   const items = navItemsByPath[pathname] || defaultNavItems;
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   // * UI: Open or close the burger menu dynamically verifying desktop breakpoint
   useEffect(() => {
-    const desktopMediaQuery = window.matchMedia(`(min-width: ${widthForItemsToFit}px)`);
+    const desktopMediaQuery = window.matchMedia(
+      `(min-width: ${widthForItemsToFit}px)`,
+    );
 
     const handleMediaQueryChange = (event: MediaQueryListEvent) => {
       setIsMenuOpen(event.matches);
@@ -30,6 +34,16 @@ const Navbar = () => {
       desktopMediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+
+  const onLinkClick = (item: NavItem) => {
+    window.innerWidth < widthForItemsToFit && setIsMenuOpen(false);
+    if (item?.hash) {
+      const element = document.querySelector(item.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <nav className="navbar-break:static bg-secondary-300 shadow-primary-500 dark:bg-primary-600 relative z-50 flex h-fit w-full shadow-sm">
@@ -67,13 +81,10 @@ const Navbar = () => {
                 transition={{ delay: key * 0.1 }}
                 className="navbar-break:w-auto navbar-break:last:[&_a]:pr-0 w-full"
               >
-                <a
-                  href={item.href}
+                <Link
+                  to={{ pathname: item.path, hash: item?.hash }}
                   className="navbar-break:rounded-lg navbar-break:px-4 navbar-break:py-2 navbar-break:active:bg-inherit group active:bg-active relative flex items-center gap-3 p-5 font-semibold md:justify-center"
-                  onClick={() =>
-                    window.innerWidth < widthForItemsToFit &&
-                    setIsMenuOpen(false)
-                  }
+                  onClick={() => onLinkClick(item)}
                 >
                   <i className="navbar-break:hidden text-icon transition-all group-active:rotate-[15deg] md:w-[2ch]">
                     {item.icon}
@@ -82,7 +93,7 @@ const Navbar = () => {
                     {t(item.i18n_key)}
                     <span className="navbar-break:group-hover:w-full bg-icon absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-200" />
                   </span>
-                </a>
+                </Link>
               </motion.li>
             ))}
           </motion.ul>
