@@ -6,18 +6,18 @@
         "en": "OrdenApp"
       },
       "unix_timestamp": {
-        "from": 1707102976,
-        "to": 1717125376
+        "from": 1744027200,
+        "to": null
       },
       "description": {
-        "es": "Plataforma empresarial que conecta a profesionales de la fisioterapia con potenciales pacientes. Las personas pueden contratar servicios y reservar citas con el/la profesional de su elección. Adicionalmente, funciona como una comunidad donde se comparten publicaciones, conversaciones, calificaciones, preguntas y muchas más características.",
-        "en": "Business platform that connects physiotherapy professionals with potential patients. Users can hire services and book appointments with the professional of their choice. Additionally, it works as a community where posts, conversations, ratings, questions, and many more features are shared."
+        "es": "Una solución integral diseñada para el sector gastronómico que transforma la experiencia del cliente y centraliza la operación del negocio. OrdenApp digitaliza por completo tanto la atención al cliente —a través de menús QR personalizables, pedidos desde el celular y pagos integrados— como la gestión operativa interna, todo de forma integrada y en tiempo real, eliminando esperas innecesarias y errores en la toma de pedidos.",
+        "en": "A complete solution designed the foodservice industry that improves the customer experience and centralizes business operations. OrdenApp fully digitalizes both customer service —with customizable QR menus, mobile ordering, and integrated payments— and internal management in a simple and real-time way, eliminating unnecessary wait times and order errors."
       },
       "html_description": {
-        "es": "<h3>Tareas que llevé a cabo</h3> <h4>Backend</h4> <ul> <li>Diseño y CRUDs de diferentes entidades (MongoDB/Mongoose)</li> <li>Autenticación basada en cookies con JWT</li> <li>Desarrollo de middlewares: Autorización por roles, Validación de datos con ZOD, Subida de archivos a Cloudinary</li> <li>Manejo de errores personalizado</li> </ul> <h4>Frontend</h4> <ul> <li>Sección de blogs: Detalle, Formulario de creación/edición, Mis blogs, Comentarios</li> <li>Servicios de Profesional: Formulario de creación/edición, Mis servicios, Botón WhatsApp</li> <li>Sección 'Pregunta a un experto': Formulario de pregunta y respuesta, Moderación</li> <li>Formulario de inicio de sesión / registro (profesional/usuario)</li> <li>Vista 'Editar perfil': Campos por rol (profesional/usuario), Verificación de contraseña para datos sensibles, Actualización de sesión con NextAuth</li> <li>Detalle de profesional: Ratings, Turnos, Experiencia</li> <li>Protección de rutas basada en roles con NextAuth</li> <li>Vistas responsivas siguiendo el enfoque mobile-first, aportando al diseño de Figma</li> </ul>",
-        "en": "<h3>Tasks I completed</h3> <h4>Backend</h4> <ul> <li>Design and CRUDs for various entities (MongoDB/Mongoose)</li> <li>Cookie-based authentication with JWT</li> <li>Middleware development: Role-based authorization, Data validation with ZOD, File uploads to Cloudinary</li> <li>Custom error handling</li> </ul> <h4>Frontend</h4> <ul> <li>Blog section: Detail, Creation/edit form, My blogs, Comments</li> <li>Professional services: Creation/edit form, My services, WhatsApp button</li> <li>'Ask an expert' section: Question and answer form, Moderation</li> <li>Login/registration form (professional/user)</li> <li>Edit profile view: Role-based fields (professional/user), Password verification for sensitive data, Session update with NextAuth</li> <li>Professional detail: Ratings, Appointments, Experience</li> <li>Role-based route protection with NextAuth</li> <li>Fully responsive design following a mobile-first approach, contributing to Figma design</li> </ul>"
+        "es": "<h3>Tareas que llevé a cabo</h3>\n<h4>Frontend</h4>\n<ul>\n<li>Creación de dashboards interactivos con <strong>Recharts</strong> para facilitar el análisis de métricas clave del negocio.</li>\n<li>Desarrollo de función para asignar y liberar mesas en tiempo real, mejorando la gestión del espacio y la atención.</li>\n<li>Mejora de la interfaz para cambiar método de pago en órdenes procesadas, permitiendo correcciones sin afectar la experiencia.</li>\n<li>Integración de filtros en tablas, agilizando la búsqueda y organización de datos operativos.</li>\n<li>Incorporación de módulo delivery, optimizando asignación y seguimiento eficiente de órdenes.</li>\n</ul>\n<h4>Impacto en el negocio</h4>\n<ul>\n<li>Mejora en el control de mesas, aumentando la eficiencia y la rotación en el restaurante.</li>\n<li>Toma de decisiones operativas más eficientes gracias al acceso a estadísticas claras y en tiempo real.</li>\n<li>Reducción de errores en el manejo de pagos y órdenes, mejorando la fiabilidad de los procesos administrativos.</li>\n</ul>",
+        "en": "<h3>Tasks performed</h3>\n<h4>Frontend</h4>\n<ul>\n<li>Creation of interactive dashboards with <strong>Recharts</strong> to support analysis of key business metrics.</li>\n<li>Development of real‑time table assignment and release functionality, enhancing space management and service.</li>\n<li>Interface enhancement for changing payment methods on processed orders, allowing corrections without affecting user experience.</li>\n<li>Integration of filters in tables, accelerating operational data search and organization.</li>\n<li>Addition of a delivery module, streamlining order assignment and tracking.</li>\n</ul>\n<h4>Business impact</h4>\n<ul>\n<li>Greater efficiency in table management, increasing turnover in the restaurant.</li>\n<li>More accurate operational decisions enabled by clear, real‑time statistics.</li>\n<li>Fewer errors in payment and order handling, boosting the reliability of administrative processes.</li>\n</ul>"
       },
-      "thumbnail": "/projects/fisiomfulness/fisiom_thumbnail.webp",
+      "thumbnail": "/projects/ordenapp/ordenapp_thumbnail.png",
       "images": [],
       "external_link": {
         "type": "Demo",
@@ -28,23 +28,20 @@
         "url": ""
       },
       "tags": {
-        "en": ["Internship", "Full-stack"],
-        "es": ["Pasantía", "Full-stack"]
+        "en": ["Work", "Frontend"],
+        "es": ["Trabajo", "Frontend"]
       },
       "technologies": [
-        "JavaScript",
+        "TypeScript",
         "React",
-        "Next.js",
-        "TailwindCSS",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Mongoose",
-        "Socket.IO",
-        "Zod",
-        "NextAuth",
+        "Vite",
+        "MaterialUI",
+        "Recharts",
+        "Pusher",
+        "SWR",
         "Formik",
-        "Cloudinary"
+        "Yup",
+        "SCRUM"
       ]
     },
     {
