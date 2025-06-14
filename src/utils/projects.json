@@ -6,8 +6,7 @@
         "en": "OrdenApp"
       },
       "unix_timestamp": {
-        "from": 1744027200,
-        "to": null
+        "from": 1744027200
       },
       "description": {
         "es": "Una solución integral diseñada para el sector gastronómico que transforma la experiencia del cliente y centraliza la operación del negocio. OrdenApp digitaliza por completo tanto la atención al cliente —a través de menús QR personalizables, pedidos desde el celular y pagos integrados— como la gestión operativa interna, todo de forma integrada y en tiempo real, eliminando esperas innecesarias y errores en la toma de pedidos.",
