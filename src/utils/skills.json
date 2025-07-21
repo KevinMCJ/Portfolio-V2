@@ -16,6 +16,10 @@
           "icon": "/tech-icons/javascript.svg"
         },
         {
+          "name": "Typescript",
+          "icon": "/tech-icons/typescript.svg"
+        },
+        {
           "name": "React",
           "icon": "/tech-icons/react.svg"
         },
@@ -81,10 +85,6 @@
       },
       "technologies": [
         {
-          "name": "Typescript",
-          "icon": "/tech-icons/typescript.svg"
-        },
-        {
           "name": "Material UI",
           "icon": "/tech-icons/material-ui.svg"
         },
@@ -115,10 +115,6 @@
         {
           "name": "VSCODE",
           "icon": "/tech-icons/visual-studio-code.svg"
-        },
-        {
-          "name": "NPM",
-          "icon": "/tech-icons/npm.svg"
         },
         {
           "name": "Trello",
